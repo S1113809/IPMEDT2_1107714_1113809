@@ -8,8 +8,22 @@ html{
     font-family: 'Roboto Slab', serif;
 }
 body{
-    background-color:  #1a1a1a;
+    background-color: var(--back-ground) ;
     margin-top: 5rem;
+}
+
+:root{
+    --back-ground: #1a1a1a;
+    --back-ground--panel: #343434;
+    --back-ground--button-launch: #EE0000;
+    --back-ground--button-launch--hover: #cc0000;
+    --text-color--button-launch: #FFFFFF;
+    --text-color--info: #00FF29;
+    --lights-red: #ee0000;
+    --lights-orange: #FF7700;
+    --lights-yellow: #FFF700;
+    --lights-green: #00AF04;
+    --lights-blue: #007EFF;
 }
 
 /* Top lights */
@@ -19,9 +33,11 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #343434;
+    background-color: var(--back-ground--panel);
     margin: auto;
     border-radius: 2.6rem;
+    box-shadow:  35px 35px 100px #2f2f2f,
+             -35px -35px 100px #393939;
 }
 .lights__container{
     width: 30%;
@@ -44,22 +60,76 @@ body{
     justify-self: center;
     align-self: center;
 }
-.light__top--left{
+.light--top--left{
     grid-area: light1;
 }
-.light__top--right{
+.light--top--right{
     grid-area: light2;
 }
-.light__center{
+.light--center{
     grid-area: light3;
 }
-.light__bottom--left{
+.light--bottom--left{
     grid-area: light4;
 }
-.light__bottom--right{
+.light--bottom--right{
     grid-area: light5;
 }
 
+/* colored lights */
+.light--red{
+    background: var(--back-ground--button-launch);
+    opacity: 0.8;
+    animation-name: light--red-pulse;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+.light--red:nth-child(2){
+    animation-delay: 0.5s;
+}
+.light--orange{
+    background: var(--lights-orange);
+    opacity: 0.8;
+    animation-name:light--orange-pulse;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+.light--orange:nth-child(2), .light--orange:nth-child(4){
+    animation-delay: 0.5s;
+}
+.light--orange:nth-child(3), .light--orange:nth-child(5){
+    animation-delay: 1s;
+}
+.light--yellow{
+    background: var(--lights-yellow);   
+    opacity: 0.8;
+    animation-name: light--yellow-pulse;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+}
+.light--yellow:nth-child(2){
+    animation-delay: 1.2s;
+}
+.light--green{
+    background: var(--lights-green);
+    opacity: 0.8;
+    animation: light--green-pulse;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;    
+}
+.light--green:nth-child(2){
+    animation-delay: 2.8s;
+}
+.light--blue{
+    background: var(--lights-blue);
+    opacity: 0.8;
+    animation: light--blue-pulse;
+    animation-duration: 3.2s;
+    animation-iteration-count: infinite;
+}
+.light--blue:nth-child(2){
+    animation-delay: 2.2s;
+}
 
 /* Launch */
 .button__container{
@@ -73,17 +143,17 @@ body{
 .button{
     width: 75%;
     height: 35%;
-    color: white;
+    color: var(--text-color--button-launch);
     font-size: 4rem;
     text-shadow: 0.2rem 0.2rem 0.4rem #000000;
     border-radius: 2.6rem;
-    background-color: #FF0000;
+    background-color: var(--back-ground--button-launch);
     border: none;
     animation: pulse 5s infinite;
 }
 .button:hover{
     cursor: pointer;
-    background: #cc0000;
+    background: var(--back-ground--button-launch--hover);
     /* box-shadow: 1px 1px 2px rgba(#fff, .2); */
     text-decoration: none;
     text-shadow: 0.3rem 0.3rem 0.8rem #000000;
@@ -98,18 +168,76 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: whitesmoke;
+    color: var(--text-color--info);
 }
 
 /* Animations */
+/* button pulse */
 @keyframes pulse {
     0% {
-      box-shadow: 0 0 0 1rem rgba(255, 0, 0, 0.8);
+      box-shadow: 0 0 3rem 1rem rgba(255, 0, 0, 0.8);
     }
     50% {
-        box-shadow: 0 0 0 0.5rem rgba(255, 0,0, 0);
+        box-shadow: 0 0 1.5rem 0.4rem rgba(255, 0,0, 0);
     }
     100% {
-        box-shadow: 0 0 0 1rem rgba(255, 0, 0, 0.8);
+        box-shadow: 0 0 3rem 1rem rgba(255, 0, 0, 0.8);
     }
-  }
+}
+
+/* light panel pulses */
+@keyframes light--red-pulse{
+    0% {
+        box-shadow: 0 0 3rem 0.8rem rgb(238, 0, 0, 0.9);
+      }
+      50% {
+          box-shadow: 0 0 1.5rem 0.1rem rgb(255, 0, 0, 0);
+      }
+      100% {
+          box-shadow: 0 0 3rem 0.8rem rgb(238, 0, 0, 0.9);
+      }
+}
+@keyframes light--orange-pulse{
+    0% {
+        box-shadow: 0 0 3rem 0.5rem rgb(255, 119, 0, 0.8);
+      }
+      50% {
+          box-shadow: 0 0 1.5rem 0.1rem rgb(255, 119, 0, 0);
+      }
+      100% {
+          box-shadow: 0 0 3rem 0.5rem rgb(255, 119, 0, 0.8);
+      }
+}
+@keyframes light--yellow-pulse{
+    0% {
+        box-shadow: 0 0 3rem 0.5rem rgb(255, 247, 0, 0.8);
+      }
+      50% {
+          box-shadow: 0 0 1.5rem 0.1rem rgb(255, 247, 0, 0);
+      }
+      100% {
+          box-shadow: 0 0 3rem 0.5rem rgb(255, 247, 0, 0.8);
+      }
+}
+@keyframes light--green-pulse{
+    0% {
+        box-shadow: 0 0 3rem 0.5rem rgb(0, 175, 4, 0.9);
+      }
+      50% {
+          box-shadow: 0 0 1.5rem 0.1rem rgb(0, 175, 4, 0);
+      }
+      100% {
+          box-shadow: 0 0 3rem 0.5rem rgb(0, 175, 4, 0.9);
+      }
+}
+@keyframes light--blue-pulse{
+    0% {
+        box-shadow: 0 0 3rem 0.5rem rgb(0, 126, 255, 0.8);
+      }
+      50% {
+          box-shadow: 0 0 1.5rem 0.1rem rgb(0, 126, 255, 0);
+      }
+      100% {
+          box-shadow: 0 0 3rem 0.5rem rgb(0, 126, 255, 0.8);
+      }
+}
