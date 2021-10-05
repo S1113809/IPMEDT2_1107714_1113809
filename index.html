@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./CSS/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monda&display=swap" rel="stylesheet">
     <title>IPMEDT2</title>
   </head>
   <body>
@@ -38,8 +41,31 @@
         <button class="button">LAUNCH</button>
       </section>
       <!-- info -->
-      <section class="information__container">
-        surrounding information
+      <section class="information">
+        <section class="information__container information--int-temp">
+          <p class="information--text information--type">Internal temperature</p>
+          <p class="information--text information--dots">:</p>
+          <p class="information--text information--value"><span id="js--internalTemp">15</span> &#x2103;</p> 
+          <!-- &#x2103; gives celsius symbol -->
+        </section>
+        <section class="information__container information--ext-temp">
+          <p class="information--text information--type">External temperature</p>
+          <p class="information--text information--dots">:</p>
+          <p class="information--text information--value"><span id="js--externalTemp">10</span> &#x2103;</p> 
+          <!-- &#x2103; gives celsius symbol -->
+        </section>
+        <section class="information__container information--pressure">
+          <p class="information--text information--type">Cabin pressure</p>
+          <p class="information--text information--dots">:</p>
+          <p class="information--text information--value">750 mBar</p> 
+          <!-- &#x2103; gives celsius symbol -->
+        </section>
+        <section class="information__container information--speed">
+          <p class="information--text information--type">Speed</p>
+          <p class="information--text information--dots">:</p>
+          <p class="information--text information--value"><span id="js--speed">0</span> Km/h</p> 
+          <!-- &#x2103; gives celsius symbol -->
+        </section>
       </section>
   </body>
 </html>

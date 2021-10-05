@@ -5,7 +5,7 @@
 }
 html{
     font-size: 62.5%;
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Monda', sans-serif;
 }
 body{
     background-color: var(--back-ground) ;
@@ -24,6 +24,9 @@ body{
     --lights-yellow: #FFF700;
     --lights-green: #00AF04;
     --lights-blue: #007EFF;
+    --panel-border-radius: 2.6rem;
+    --panel-box-shadow: 35px 35px 100px #2f2f2f,
+                        -35px -35px 100px #393939;
 }
 
 /* Top lights */
@@ -35,9 +38,8 @@ body{
     align-items: center;
     background-color: var(--back-ground--panel);
     margin: auto;
-    border-radius: 2.6rem;
-    box-shadow:  35px 35px 100px #2f2f2f,
-             -35px -35px 100px #393939;
+    border-radius: var(--panel-border-radius);
+    box-shadow:  var(--panel-box-shadow);
 }
 .lights__container{
     width: 30%;
@@ -162,14 +164,44 @@ body{
 }
 
 /* Bottom information  */
-.information__container{
-    width: 100%;
+.information{
+    width: 90%;
     height: 25vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     color: var(--text-color--info);
+    background-color: var(--back-ground--panel);
+    margin: auto;
+    border-radius: var(--panel-border-radius);
+    box-shadow: var(--panel-box-shadow);
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(4, minmax(25%, 1fr));
+  
 }
+
+.information__container{  
+    font-size: 1.6rem ;  
+    margin: 2rem;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(10%, 1fr));
+    grid-template-rows: auto;
+    grid-template-areas: "type type type dots value value";
+}
+.information--type{
+    grid-area: type;
+    justify-self: flex-start;
+    align-self: center;
+}
+.information--dots{
+    grid-area: dots;
+    justify-self: center;
+    align-self: center;
+}
+.information--value{
+    grid-area: value;
+    justify-self: flex-start;
+    align-self: center;
+}
+
 
 /* Animations */
 /* button pulse */
