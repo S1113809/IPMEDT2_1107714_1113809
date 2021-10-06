@@ -85,7 +85,7 @@ body{
     animation-duration: 1.5s;
     animation-iteration-count: infinite;
 }
-.light--red:nth-child(2){
+.light--red:nth-child(1){
     animation-delay: 0.5s;
 }
 .light--orange{
@@ -95,11 +95,11 @@ body{
     animation-duration: 2s;
     animation-iteration-count: infinite;
 }
-.light--orange:nth-child(2), .light--orange:nth-child(4){
+.light--orange:nth-of-type(2), .light--orange:nth-of-type(4){
     animation-delay: 0.5s;
 }
 .light--orange:nth-child(3), .light--orange:nth-child(5){
-    animation-delay: 1s;
+    animation-delay: 1s;    
 }
 .light--yellow{
     background: var(--lights-yellow);   
@@ -152,7 +152,7 @@ body{
     border: none;
     animation: pulse 5s infinite;
 }
-.button:hover{
+.button:hover, .active{
     cursor: pointer;
     background: var(--back-ground--button-launch--hover);
     text-decoration: none;
@@ -172,7 +172,7 @@ body{
     box-shadow: var(--panel-box-shadow);
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: repeat(4, minmax(25%, 1fr));
+    grid-template-rows: repeat(4, minmax(20%, 1fr));
     grid-template-areas:    "int"
                             "ext"
                             "pres"
@@ -328,16 +328,10 @@ body{
     .information{
         width:  60%;
     }
-    .information--type{
-        grid-column-start: 1;
-    }
 }
 @media screen and (min-width: 75rem){
     /* 1200px */
     .information--type{
         grid-column-start: 2;
-    }
-    .information--value{
-        grid-column-start: 5;
     }
 }
