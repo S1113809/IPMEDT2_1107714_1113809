@@ -63,7 +63,7 @@ function launch(){
         speed.innerHTML = Math.round(parseInt(speed.innerHTML) + delta);
         delta = delta * 1.1 ;
         if(parseInt(speed.innerHTML) > 500){
-            // window.location.href = "adventure.html";
+            window.location.href = "adventure.html";
         }
     }, 100);
     
