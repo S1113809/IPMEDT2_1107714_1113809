@@ -183,10 +183,11 @@ body{
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: repeat(4, minmax(20%, 1fr));
-    grid-template-areas:    "int"
+    grid-template-areas:    "speed"  
+                            "int"
                             "ext"
                             "pres"
-                            "speed"   
+                             
         ;
     row-gap: 0.5rem;
     padding: 1.2rem;
@@ -228,11 +229,14 @@ body{
     grid-column-start: 6;
 }
 .stand-out{
-    color: var(--back-ground--panel);
-    background: var(--text-color--info);
+    /* color: var(--back-ground--panel);
+    background: var(--text-color--info); */
     border-radius: 2rem;
     padding: 0.2rem;
     animation: pulse 2s infinite;
+}
+.bold{
+    font-weight: bold;
 }
 
 /* Animations */
