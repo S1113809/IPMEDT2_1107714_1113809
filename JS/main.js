@@ -1,9 +1,9 @@
 console.log("JS LOADED");
 
 // vars to alter
-const intTemp = document.getElementById("js--internalTemp");
-const extTemp = document.getElementById("js--externalTemp");
-const speed = document.getElementById("js--speed");
+let intTemp = document.getElementById("js--internalTemp");
+let extTemp = document.getElementById("js--externalTemp");
+let speed = document.getElementById("js--speed");
 const launchButton = document.getElementById("js--launchButton");
 // get lights to set delays
 const lightsRed = document.getElementsByClassName("light--red");
@@ -12,14 +12,35 @@ const lightsYellow = document.getElementsByClassName("light--yellow");
 const lightsGreen = document.getElementsByClassName("light--green");
 const lightsBlue = document.getElementsByClassName("light--blue");
 // Audio's 
-const rocket_takeOf_string = "Rocket_take_off.wav";
+const intro_audio = document.querySelector(".introAudio");
+const rocket_takeOf_audio = new Audio("./Sounds/Rocket_take_off.wav");
+let soundsArray =[rocket_takeOf_audio];
+// MuteButton
+const muteButton = document.querySelector(".toggle-sound");
 
 
 window.onload = function () {
     // Functions to execute on start
     loadTemps();
     setLightDelay();
+    // start app muted
+    mute();
+    muteButton.classList.add("sound-mute"); 
+    introAudio();
 }
+
+function introAudio(){
+    let playAttempt = setInterval(() => {
+        intro_audio.play()
+          .then(() => {
+            clearInterval(playAttempt);
+          })
+          .catch(error => {
+            console.log('Unable to play the video, User has not interacted yet.');
+          });
+      }, 500);
+}
+
 
 function loadTemps(){
     // Create ints to show as temperatures
@@ -52,6 +73,8 @@ function setLightDelay(){
 
 function launch(){
     // Launching 
+    // Play audio
+    rocket_takeOf_audio.play();
     // Hold button on hover/active state -> appearing to be pushed down
     launchButton.classList.add("active");
     document.querySelector(".information").classList.add("stand-out");
@@ -66,9 +89,38 @@ function launch(){
         // Increase speed on launch button clicked with an increase of 5% every 100ms
         speed.innerHTML = Math.round(parseInt(speed.innerHTML) + delta);
         delta = delta * 1.1 ;
-        if(parseInt(speed.innerHTML) > 500){
-            // window.location.href = "adventure.html";
+        if(parseInt(speed.innerHTML) > 600){
+            window.location.href = "adventure.html";
         }
-    }, 100);
-    
+    }, 100);    
+}
+
+function toggleSound(){
+    if(muteButton.classList.contains("sound-mute")){
+        muteButton.classList.remove("sound-mute");
+        unmute();
+    }else{
+        muteButton.classList.add("sound-mute");
+        mute();
+    }
+}
+
+function mute(){
+    // Mute all audio
+    document.querySelectorAll("audio").forEach(elem => {
+        elem.muted  = true}
+    );
+    for(let i = 0; i < soundsArray.length; i++){
+        soundsArray[i].volume = 0;
+    }
+}
+
+function unmute(){
+    // Unmute all audio
+    document.querySelectorAll("audio").forEach(elem => {
+        elem.muted  = false}
+    );
+    for(let i = 0; i < soundsArray.length; i++){
+        soundsArray[i].volume = 1;
+    }
 }

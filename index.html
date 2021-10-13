@@ -4,7 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- own made style sheets -->
     <link rel="stylesheet" href="./CSS/splashScreen.css">
+    <link rel="stylesheet" href="./CSS/mutebutton.css">
+    <!-- Style sheet for sound icon -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <!-- google fonts import -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Monda&display=swap" rel="stylesheet">
@@ -12,9 +17,18 @@
   </head>
   <body>
       <script type="text/javascript" src="./JS/main.js" defer> </script>
-      <audio id="introAudio" autoplay loop>
+      <audio class="introAudio" id="introAudio" >
         <source src="./Sounds/Robot_Code_Mastered.mp3" type="audio/mpeg">
       </audio>
+      <!-- Mute audio button -->
+      <section class="mute__container">
+        <figure class="unmuted toggle-sound"  onclick="toggleSound()">
+            <i class="sound--icon fas">&#xf026;</i>
+            <div class="sound--wave sound--wave_one"></div>
+            <div class="sound--wave sound--wave_two"></div>
+            <div class="sound--wave sound--wave_three"></div>
+          </figure>
+        </section>
       <!-- lights -->
       <section class="lights">
         <div class="lights__container">
@@ -45,6 +59,11 @@
       </section>
       <!-- info -->
       <section class="information">
+        <section class="information__container information--speed">
+          <p class="information--text information--type">Speed</p>
+          <p class="information--text information--dots">:</p>
+          <p class="information--text information--value"><span id="js--speed">0</span> Km/h</p> 
+        </section>
         <section class="information__container information--int-temp">
           <p class="information--text information--type">Internal temperature</p>
           <p class="information--text information--dots">:</p>
@@ -61,14 +80,8 @@
           <p class="information--text information--type">Cabin pressure</p>
           <p class="information--text information--dots">:</p>
           <p class="information--text information--value">750 mBar</p> 
-          <!-- &#x2103; gives celsius symbol -->
         </section>
-        <section class="information__container information--speed">
-          <p class="information--text information--type">Speed</p>
-          <p class="information--text information--dots">:</p>
-          <p class="information--text information--value"><span id="js--speed">0</span> Km/h</p> 
-          <!-- &#x2103; gives celsius symbol -->
-        </section>
+        
       </section>
   </body>
 </html>
