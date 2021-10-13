@@ -11,6 +11,9 @@ const lightsOrange = document.getElementsByClassName("light--orange");
 const lightsYellow = document.getElementsByClassName("light--yellow");
 const lightsGreen = document.getElementsByClassName("light--green");
 const lightsBlue = document.getElementsByClassName("light--blue");
+// Audio's 
+const rocket_takeOf_string = "Rocket_take_off.wav";
+
 
 window.onload = function () {
     // Functions to execute on start
@@ -51,7 +54,8 @@ function launch(){
     // Launching 
     // Hold button on hover/active state -> appearing to be pushed down
     launchButton.classList.add("active");
-    document.querySelector(".information--speed").classList.add("stand-out");
+    document.querySelector(".information").classList.add("stand-out");
+    document.querySelector(".information--speed").classList.add("bold");
     // Disahle button -> cannot be clicked again
     launchButton.disabled = true;
     // Set speed to 1 -> 0 cannot be multiplied
@@ -63,7 +67,7 @@ function launch(){
         speed.innerHTML = Math.round(parseInt(speed.innerHTML) + delta);
         delta = delta * 1.1 ;
         if(parseInt(speed.innerHTML) > 500){
-            window.location.href = "adventure.html";
+            // window.location.href = "adventure.html";
         }
     }, 100);
     
