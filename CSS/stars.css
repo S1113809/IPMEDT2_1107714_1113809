@@ -1,0 +1,110 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+    font-family: 'Monda', sans-serif;
+}
+body{
+    background-color: var(--back-ground) ;
+    margin-top: 5rem;
+}
+:root{
+    --back-ground: #1a1a1a;
+    --white: #f5f5ff;
+    --white-rgb: rgb(245, 245, 255);
+}
+/* main source https://codepen.io/wikyware-net/pen/xxqJmMo */
+/* Stars */
+.star__container{
+    height: 100vh;
+    width: 100vw;
+}
+.star{
+    height: 20px;
+    width: 17.5px;
+    background: url(../IMG/star.png) no-repeat center;
+    background-size: contain;
+    z-index: 1;
+    position: absolute;
+    animation: twinkle 2s 0.8s linear infinite;
+}
+
+.star:nth-child(1){
+    top: 10%;
+    left: 30%;
+    animation-delay: 0.01s;
+}
+.star:nth-child(2){
+    top: 20%;
+    left: 10%;
+    animation-delay: 0.5s;
+}
+.star:nth-child(3){
+    top: 35%;
+    left: 32%;
+    animation-delay: 0.7s;
+}
+.star:nth-child(4){
+    top: 50%;
+    left: 50%;
+    animation-delay: 0.01s;
+}
+.star:nth-child(5){
+    top: 10%;
+    left: 60%;
+    animation-delay: 0.5s;
+}
+.star:nth-child(6){
+    top: 60%;
+    left: 9%;
+    animation-delay: 0.7s;
+}
+.star:nth-child(7){
+    top: 70%;
+    left: 28%;
+    animation-delay: 0.3s;
+}
+.star:nth-child(8){
+    top: 80%;
+    left: 63%;
+    animation-delay: 0.5s;
+}
+.star:nth-child(9){
+    top: 76%;
+    left: 77%;
+    animation-delay: 0.7s;
+}
+.star:nth-child(10){
+    top: 29%;
+    left: 80%;
+    animation-delay: 0.01s;
+}
+.star:nth-child(11){
+    top: 18%;
+    left: 13%;
+    animation-delay: 0.5s;
+}
+.star:nth-child(12){
+    top: 60%;
+    left: 69%;
+    animation-delay: 0.7s;
+}
+.star:nth-child(13){
+    top: 30%;
+    left: 63%;
+    animation-delay: 0.3s;
+}
+@keyframes twinkle {
+    0% {
+      transform: scale(1, 1) rotate(0deg);
+    }
+    50% {
+      transform: scale(0.5, 0.5) rotate(180deg);
+    }
+    100% {
+      transform: scale(1, 1) rotate(360deg); 
+    }
+  }

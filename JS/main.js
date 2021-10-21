@@ -21,12 +21,16 @@ const muteButton = document.querySelector(".toggle-sound");
 
 window.onload = function () {
     // Functions to execute on start
-    loadTemps();
-    setLightDelay();
+    var path = window.location.pathname;
+    if(path == "/index.html"){
+        loadTemps();
+        setLightDelay();
+        introAudio();
+    }    
     // start app muted
     mute();
     muteButton.classList.add("sound-mute"); 
-    introAudio();
+    
 }
 
 function introAudio(){
@@ -90,7 +94,7 @@ function launch(){
         speed.innerHTML = Math.round(parseInt(speed.innerHTML) + delta);
         delta = delta * 1.1 ;
         if(parseInt(speed.innerHTML) > 600){
-            window.location.href = "adventure.html";
+            window.location.href = "launch.html";
         }
     }, 100);    
 }
