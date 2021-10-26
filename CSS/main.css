@@ -1,0 +1,22 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+    font-family: 'Monda', sans-serif;
+    background: #696969;
+}
+
+.navButton{
+  position: absolute;
+  width: 30vw;
+  height: 30vw;
+  margin: 1rem;
+  bottom: 0;
+}
+
+.navButton--right{
+  right: 0;
+}
