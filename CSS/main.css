@@ -10,20 +10,39 @@ html{
 }
 
 .navButton{
+  border: none;
+  font-size: 5rem;
+  font-weight: bolder;
   position: absolute;
   width: 30vw;
   height: 30vw;
   margin: 1rem;
   bottom: 0;
+  border-radius: 0.5rem;
+  background: #F08080;
+  transition: 0.5s;
+  cursor: pointer;
 }
 
 .navButton--right{
   right: 0;
 }
 
+.navButton:hover{
+  background-color: #CD5C5C;
+}
+
 @media (orientation: landscape) {
   .navButton{
     width: 30vh;
     height: 30vh;
+  }
+}
+
+@media screen and (min-width: 1200px ) {
+  .navButton{
+    width: 20vh;
+    height: 20vh;
+    margin: 5rem;
   }
 }
