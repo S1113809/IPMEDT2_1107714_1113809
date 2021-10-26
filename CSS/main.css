@@ -6,7 +6,7 @@
 html{
     font-size: 62.5%;
     font-family: 'Monda', sans-serif;
-    background: #696969;
+    background: #202020;
 }
 
 .navButton{
@@ -19,4 +19,11 @@ html{
 
 .navButton--right{
   right: 0;
+}
+
+@media (orientation: landscape) {
+  .navButton{
+    width: 30vh;
+    height: 30vh;
+  }
 }
