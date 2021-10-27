@@ -11,14 +11,12 @@ let stage = 0;
 buttonRight.addEventListener("click", function(){
     setStageForward(stage);
     checkStage();
-    console.log(stage);
   }
 );
 
 buttonLeft.addEventListener("click", function(){
     setStageBack(stage);
     checkStage();
-    // console.log(stage);
 });
 
 function checkStage(){
@@ -54,13 +52,11 @@ function setStageBack(stageInt){
       let translation = (stageInt - 1) * 100;
       switch (stageInt) {
         case 1:
-          console.log(stageInt + ": case 1");
           background1.style.transform= "none";
           background2.style.transform= "none";
           background3.style.transform= "none";
           break;
         case 2:
-          console.log(stageInt + ": case 2");
           background1.style.transform = "translateX(" + translation + "vw)";
           background2.style.transform = "translateX(-" + translation + "vw)";
           background3.style.transform = "none";
