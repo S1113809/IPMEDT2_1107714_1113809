@@ -25,5 +25,6 @@ function stars(numberOfStars, divID){
     }
 }
 
-stars(80, "js--background1")
-stars(500, "js--background2")
+stars(80, "js--background1");
+stars(500, "js--background2");
+stars(800, "js--background3");

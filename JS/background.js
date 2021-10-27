@@ -4,11 +4,11 @@ const buttonRight = document.getElementById("js--buttonRight");
 const buttonLeft = document.getElementById("js--buttonLeft");
 const background1 = document.getElementById("js--background1");
 const background2 = document.getElementById("js--background2");
+const background3 = document.getElementById("js--background3");
 
 let stage = 0;
 
 buttonRight.addEventListener("click", function(){
-    stage++;
     setStageForward(stage);
     checkStage();
     console.log(stage);
@@ -17,9 +17,8 @@ buttonRight.addEventListener("click", function(){
 
 buttonLeft.addEventListener("click", function(){
     setStageBack(stage);
-    stage--;
     checkStage();
-    console.log(stage);
+    // console.log(stage);
 });
 
 function checkStage(){
@@ -33,21 +32,44 @@ function checkStage(){
   }
 }
 
-function setStageForward(stage){
-  const translation = stage * 100;
-  const prevTranslation = translation - 100;
-  background1.style.transform= "translateX(" + translation + "vw)";
-  background2.style.transform= "translateX(-" + translation + "vw)";
+function setStageForward(stageInt){
+  const translation = (stageInt + 1) * 100;
+  console.log(translation);
 
+  switch (stage) {
+    case 0:
+      background1.style.transform= "translateX(" + translation + "vw)";
+      background2.style.transform= "translateX(-" + translation + "vw)";
+      break;
+    case 1:
+      background2.style.transform= "translateX(" + translation + "vw)";
+      background3.style.transform= "translateX(-" + translation + "vw)";
+      break;
+  }
+  stage++;
 }
 
-function setStageBack(stage){
-  if (stage == 1) {
-    background1.style.transform= "none";
-    background2.style.transform= "none";
+function setStageBack(stageInt){
+  if (stageInt > 0) {
+      let translation = (stageInt - 1) * 100;
+      switch (stageInt) {
+        case 1:
+          console.log(stageInt + ": case 1");
+          background1.style.transform= "none";
+          background2.style.transform= "none";
+          background3.style.transform= "none";
+          break;
+        case 2:
+          console.log(stageInt + ": case 2");
+          background1.style.transform = "translateX(" + translation + "vw)";
+          background2.style.transform = "translateX(-" + translation + "vw)";
+          background3.style.transform = "none";
+          break;
+      }
+      stage--;
   }else {
-    const translation = stage * 100;
-    background1.style.transform= "translateX(-" + translation + "vw)";
-    background2.style.transform= "translateX(" + translation + "vw)";
+    console.log("error");
+    console.log(stageInt);
+    stage = 0;
   }
 }
