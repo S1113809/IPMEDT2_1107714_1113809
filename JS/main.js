@@ -22,14 +22,24 @@ const muteButton = document.querySelector(".toggle-sound");
 window.onload = function () {
     // Functions to execute on start
     var path = window.location.pathname;
-    if(path == "/index.html"){
+    if(path == "/"){
         loadTemps();
         setLightDelay();
         introAudio();
-    }    
-    // start app muted
-    mute();
-    muteButton.classList.add("sound-mute"); 
+        // set default to muted
+        localStorage.setItem('muted', true);
+    }  
+    else if(path == "/launch.html"){
+        rocket_takeOf_audio.play();
+        rocket_takeOf_audio.currentTime = JSON.parse(localStorage.getItem('launchSound'));
+    }
+    // start app muted -> check if button is muted or not
+    if (JSON.parse(localStorage.getItem('muted')) === true){
+        mute();
+    }
+    else if (JSON.parse(localStorage.getItem('muted')) === false) {
+        unmute();
+    }      
     
 }
 
@@ -43,6 +53,7 @@ function introAudio(){
             console.log('Unable to play the video, User has not interacted yet.');
           });
       }, 500);
+      intro_audio.volume = 1;
 }
 
 
@@ -95,16 +106,15 @@ function launch(){
         delta = delta * 1.1 ;
         if(parseInt(speed.innerHTML) > 600){
             window.location.href = "launch.html";
+            localStorage.setItem('launchSound', rocket_takeOf_audio.currentTime);
         }
     }, 100);    
 }
 
 function toggleSound(){
     if(muteButton.classList.contains("sound-mute")){
-        muteButton.classList.remove("sound-mute");
         unmute();
     }else{
-        muteButton.classList.add("sound-mute");
         mute();
     }
 }
@@ -117,6 +127,9 @@ function mute(){
     for(let i = 0; i < soundsArray.length; i++){
         soundsArray[i].volume = 0;
     }
+    muteButton.classList.add("sound-mute");
+    localStorage.setItem('muted', true);
+
 }
 
 function unmute(){
@@ -125,6 +138,14 @@ function unmute(){
         elem.muted  = false}
     );
     for(let i = 0; i < soundsArray.length; i++){
-        soundsArray[i].volume = 1;
+        if(soundsArray[i] == rocket_takeOf_audio){
+            console.log("soft sound");
+            soundsArray[i].volume = 0.2;
+        }
+        else{
+            soundsArray[i].volume = 1;
+        }
     }
+    muteButton.classList.remove("sound-mute");
+    localStorage.setItem('muted', false);
 }

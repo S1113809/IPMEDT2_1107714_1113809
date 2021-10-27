@@ -17,11 +17,15 @@ body{
     --white: #f5f5ff;
     --lightgrey: #dadada;
     --midgrey: #b4b2b2;
-    --darkgrey: #554842;
+    --darkgrey: #4d4646;
     --red: #f01a19;
-    --darkred: #a75248;
+    --darkred: #880f01;
+    --blue: #007eff;
+    --orange: #ff7700;
+    --green: #00af04;
 }
-/* https://codepen.io/eva_trostlos/pen/akQoLN */
+/* main idea and base from: https://codepen.io/eva_trostlos/pen/akQoLN
+Altered to own wishes */
 .rocket__container{
     position: absolute;
     bottom: -500;
@@ -32,10 +36,9 @@ body{
 }
 .rocket{
     animation: bounce 0.5s infinite;
-    animation-delay: 1.5s;
 }
 .rocket--body{
-    background-color: var(--lightgrey);
+    background-color: var(--midgrey);
     height: 180px;
     left: calc(50% - 50px);
     border-top-right-radius: 100%;
@@ -46,46 +49,53 @@ body{
 }
 .rocket--body::before{
     content: '';
-      position: absolute;
-      left: calc(50% - 24px);
-      width: 48px;
-      height: 13px;
-      background-color: var(--darkgrey);
-      bottom: -13px;
-      border-bottom-right-radius: 60%;
-      border-bottom-left-radius: 60%;
+    position: absolute;
+    left: calc(50% - 24px);
+    width: 48px;
+    height: 13px;
+    background-color: var(--darkred);
+    bottom: -13px;
+    border-bottom-right-radius: 60%;
+    border-bottom-left-radius: 60%;
 }
 .rocket--window {
     position: absolute;
     width: 40px;
     height: 40px;
     border-radius: 100%;
-    background-color: var(--darkred);
+    background-color: var(--blue);
     left: calc(50% - 20px);
     top: 40px;
-    border: 5px solid var(--midgrey);
+    border: 5px solid var(--darkgrey);
 }
 .rocket--fin {
     position: absolute;
-    z-index: -100;
-    height: 55px;
-    width: 50px;
-    background-color: var(--darkred);
+    top: 150px;
+    width: 60px;
+    height: 70px;
+    border-radius: 40%;
 }
 .fin--left {
-    left: -30px;
-    top: calc(100% - 55px);
-    border-top-left-radius: 80%;
-    border-bottom-left-radius: 20%;
+    left: -20px;
+    top: calc(100% - 20px);
+    box-shadow: -15px -20px 0 var(--orange);
 }
 .fin--right {
-    right: -30px;
-    top: calc(100% - 55px);
-    border-top-right-radius: 80%;
-    border-bottom-right-radius: 20%;
+    right: -20px;
+    top: calc(100% - 20px);
+    box-shadow: 15px -20px 0 var(--orange);
 }
-
-/* Exhaust flame */
+.fin--center{
+    position: absolute;
+    left: 50%;
+    top: calc(100% - 25px);
+    transform: translateX(-50%);
+    height: 60px;
+    width: 3px;
+    background: var(--orange);
+    border-radius: 0 0 50% 50%;
+}
+/* Exhaust flame */ 
 .exhaust--flame {
     position: absolute;
     top: 90%;
@@ -188,7 +198,7 @@ body{
       background: linear-gradient(to bottom, transparent 8%, var(--white) 100%);
     }
     75% {
-      background: linear-gradient(to bottom, transparent 12%, var(--white) 100%);
+      background: linear-gradient(to bottom, transparent 12%, var(--midgrey) 100%);
     }
 }
 @keyframes fumes2 {
