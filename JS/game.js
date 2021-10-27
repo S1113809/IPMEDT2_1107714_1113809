@@ -1,4 +1,4 @@
-console.log("JS LOADED");
+console.log("JS stars LOADED");
 
 function stars(numberOfStars, divID){
     const chosenDiv = document.getElementById(divID)
@@ -25,5 +25,5 @@ function stars(numberOfStars, divID){
     }
 }
 
-stars(80, "js--background")
+stars(80, "js--background1")
 stars(500, "js--background2")
