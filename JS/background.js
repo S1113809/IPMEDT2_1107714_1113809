@@ -32,12 +32,29 @@ function checkStage(){
 
 function setStageForward(stageInt){
   const translation = (stageInt + 1) * 100;
-  console.log(translation);
+  const prevTranslation = translation - 100;
+  let math = prevTranslation + 1;
 
   switch (stage) {
     case 0:
-      background1.style.transform= "translateX(" + translation + "vw)";
-      background2.style.transform= "translateX(-" + translation + "vw)";
+      // background1.style.transform= "translateX(" + translation + "vw)";
+      // background2.style.transform= "translateX(-" + translation + "vw)";
+
+      var i = 1;
+
+      function myLoop() {
+        setTimeout(function() {
+          background1.style.transform = "translateX(-" + math + "vw)";
+          background2.style.transform = "translateX(-" + math + "vw)";
+          math++;
+          i++;
+          if (i < 101) {
+            myLoop();
+          }
+        }, 35)
+      }
+
+      myLoop();
       break;
     case 1:
       background2.style.transform= "translateX(" + translation + "vw)";
