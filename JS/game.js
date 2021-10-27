@@ -26,3 +26,4 @@ function stars(numberOfStars, divID){
 }
 
 stars(80, "js--background")
+stars(500, "js--background2")

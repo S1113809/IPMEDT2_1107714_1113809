@@ -6,10 +6,17 @@
 html{
     font-size: 62.5%;
     font-family: 'Monda', sans-serif;
+    overflow: hidden;
 }
 
 body{
   z-index: -1;
+}
+
+.backgroundContainer{
+  display: inline-block;
+  flex-direction: row;
+  overflow: scroll;
 }
 
 main{
@@ -17,10 +24,21 @@ main{
 }
 
 .background{
-  width: 100%;
+  width: 100vw;
   height: 100vh;
+}
+
+.backgroundContainer__background1{
   position: relative;
   background: #101010;
+}
+
+.backgroundContainer__background2{
+  background: RED;
+  position: absolute;
+  right: -100vw;
+  top: 0px;
+  transform: translateX(-100px);
 }
 
 .stars{
@@ -41,8 +59,9 @@ main{
   bottom: 0;
   border-radius: 0.5rem;
   background: #F08080;
-  transition: 0.5s;
+  transition: 0.2s;
   cursor: pointer;
+  z-index: 20;
 }
 
 .navButton--right{
@@ -51,6 +70,10 @@ main{
 
 .navButton:hover{
   background-color: #CD5C5C;
+}
+
+.navButton:active{
+  box-shadow: inset 0 0 10px #000000;
 }
 
 @media (orientation: landscape) {
