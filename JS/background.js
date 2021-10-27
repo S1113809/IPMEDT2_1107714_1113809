@@ -42,7 +42,7 @@ function setStageForward(stage){
 }
 
 function setStageBack(stage){
-  if (stage == 0) {
+  if (stage == 1) {
     background1.style.transform= "none";
     background2.style.transform= "none";
   }else {
