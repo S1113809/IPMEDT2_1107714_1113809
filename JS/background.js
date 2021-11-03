@@ -34,12 +34,10 @@ function setStageForward(stageInt){
   const translation = (stageInt + 1) * 100;
   const prevTranslation = translation - 100;
   let math = prevTranslation + 1;
+  console.log(stage);
 
-  switch (stage) {
+  switch (stageInt) {
     case 0:
-      // background1.style.transform= "translateX(" + translation + "vw)";
-      // background2.style.transform= "translateX(-" + translation + "vw)";
-
       var i = 1;
 
       function myLoop() {
@@ -52,16 +50,32 @@ function setStageForward(stageInt){
             myLoop();
           }
         }, 35)
-      }
+      };
 
       myLoop();
       break;
+
     case 1:
-      background2.style.transform= "translateX(" + translation + "vw)";
-      background3.style.transform= "translateX(-" + translation + "vw)";
+      var i = 1;
+
+      function myLoop2() {
+        setTimeout(function() {
+          background2.style.transform= "translateX(-" + math + "vw)";
+          background3.style.transform= "translateX(-" + math + "vw)";
+          math++;
+          i++;
+          if (i < 101) {
+            myLoop2();
+          }
+        }, 35)
+      };
+
+      myLoop2();
       break;
   }
+
   stage++;
+  console.log(stage);
 }
 
 function setStageBack(stageInt){
