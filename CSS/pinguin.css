@@ -1,0 +1,204 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+    font-family: 'Monda', sans-serif;
+}
+body{
+    background-color: var(--back-ground) ;
+}
+:root{
+    --back-ground: #1a1a1a;
+    --penguin-grey: #999999;
+    --penguin-white: #ffffff;
+    --penguin-orange: #ff9900;
+    --penguin-pink: #ffe6e6;
+    --penguin-black: #000000;
+}
+/* Penguin base from https://codepen.io/CyberGirl_/pen/qMmNxe */
+.penguin {
+    position: relative;
+    margin: auto;
+    display: block;
+    margin-top: 5%;
+    width: 300px;
+    height: 300px;
+    animation: loop 10s infinite linear;
+    transform-origin: 0% 0%;
+}
+.penguin * {
+    position: absolute;
+}
+
+/* Body */
+.penguin__top{
+    top: 10%;
+    left: 25%;
+    background: var(--penguin-grey, grey);
+    width: 50%;
+    height: 45%;
+    border-radius: 70% 70% 60% 60%;
+}
+.penguin__bottom{
+    top: 40%;
+    left: 23.5%;
+    background: var(--penguin-grey, grey);
+    width: 53%;
+    height: 45%;
+    border-radius: 70% 70% 100% 100%;
+}
+.penguin__top--belly {
+    top: 60%;
+    left: 2.5%;
+    background: var(--penguin-white, white);
+    width: 95%;
+    height: 100%;
+    border-radius: 120% 120% 100% 100%;
+}
+
+/* Face */
+.penguin__top--cheek{
+    top: 15%;
+    background: var(--penguin-white, white);
+    width: 60%;
+    height: 70%;
+    border-radius: 70% 70% 60% 60%;
+}
+.penguin__top--right-cheek {   
+    left: 35%;
+}
+.penguin__top--left-cheek {
+    left: 5%;    
+}
+.penguin__top--eye{
+    top: 45%;
+    background: var(--penguin-black, black);
+    width: 15%;
+    height: 17%;
+    border-radius: 50%;
+}
+.penguin__top--right-eye {
+    left: 60%;
+}
+.penguin__top--left-eye {
+    left: 25%;
+}
+.penguin__top__eye--sparkle {
+    top: 25%;
+    left: 15%;
+    background: var(--penguin-white, black);
+    width: 35%;
+    height: 35%;
+    border-radius: 50%;
+}
+.penguin__top--blush{
+    top: 65%;
+    background: var(--penguin-pink, pink);
+    width: 15%;
+    height: 10%;
+    border-radius: 50%;
+}
+.penguin__top--blush-right {
+    left: 15%;
+    
+}
+.penguin__top--blush-left {
+    left: 70%;
+}
+.penguin__top--beak{
+    background: var(--penguin-orange, orange);
+    height: 10%;
+    border-radius: 50%;
+}
+.penguin__top--beak-top {
+    top: 60%;
+    left: 40%;
+    width: 20%;
+}
+
+.penguin__top--beak-bottom {
+    top: 65%;
+    left: 42%;
+    width: 16%;
+}
+
+/* Hands */
+.penguin__bottom--hand{
+    background: var(--penguin-grey, grey);
+    width: 30%;
+    height: 60%;
+}
+.penguin__bottom--right-hand {
+    top: 5%;
+    left: 25%;    
+    border-radius: 30% 30% 120% 30%;
+    transform: rotate(130deg);
+    z-index: -1;
+    animation: wave 2s infinite linear;
+    transform-origin: 0% 0%;
+}
+.penguin__bottom--left-hand {
+    top: 0%;
+    left: 75%;
+    border-radius: 30% 30% 30% 120%;
+    transform: rotate(-45deg);
+    z-index: -1;
+}
+
+/* Feet */
+.penguin__bottom--feet{
+    top: 85%;
+    background: var(--penguin-orange, orange);
+    width: 15%;
+    height: 30%;
+    border-radius: 50% 50% 50% 50%;
+    z-index: -2222;
+}
+.penguin__bottom--right-feet {
+    left: 60%;
+     transform: rotate(-80deg);
+}
+.penguin__bottom--left-feet {
+    left: 25%;    
+    transform: rotate(80deg);
+}
+
+/* Animaties */
+@keyframes wave {
+    10% {
+        transform: rotate(110deg);
+    }
+    30% {
+        transform: rotate(130deg);
+    }
+    50% {
+        transform: rotate(110deg);
+    }
+    80% {
+        transform: rotate(130deg);
+    }
+    100% {
+        transform: rotate(110deg);
+    }
+}
+
+@keyframes loop {
+    0% {
+        transform: rotateY(0deg);
+    }
+    25% {
+        transform: rotateY(-10deg);
+    }
+    50% {
+        transform: rotateY(0deg);
+    }
+    75% {
+        transform: rotateY(10deg);
+    }
+    100% {
+        transform: rotateY(0deg);
+    }
+}
