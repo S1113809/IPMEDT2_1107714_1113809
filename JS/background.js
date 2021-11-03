@@ -81,16 +81,51 @@ function setStageForward(stageInt){
 function setStageBack(stageInt){
   if (stageInt > 0) {
       let translation = (stageInt - 1) * 100;
+      const prevTranslation = translation - 100;
+      let math = prevTranslation + 1;
+
+      let math2 = stageInt * 100;
       switch (stageInt) {
         case 1:
-          background1.style.transform= "none";
-          background2.style.transform= "none";
-          background3.style.transform= "none";
+          // background1.style.transform= "none";
+          // background2.style.transform= "none";
+          // background3.style.transform= "none";
+
+          var i = 1;
+
+          function myLoop() {
+            setTimeout(function() {
+              background1.style.transform = "translateX(" + math + "vw)";
+              background2.style.transform = "translateX(" + math + "vw)";
+              math++;
+              i++;
+              if (i < 101) {
+                myLoop();
+              }
+            }, 35)
+          };
+
+          myLoop();
           break;
         case 2:
-          background1.style.transform = "translateX(" + translation + "vw)";
-          background2.style.transform = "translateX(-" + translation + "vw)";
-          background3.style.transform = "none";
+          // background1.style.transform = "translateX(" + translation + "vw)";
+          // background2.style.transform = "translateX(-" + translation + "vw)";
+          // background3.style.transform = "none";
+
+          var i = 1;
+          function myLoop2() {
+            setTimeout(function() {
+              background2.style.transform = "translateX(-" + math2 +"vw)";
+              background3.style.transform = "translateX(-" + math2 +"vw)";
+              math2--;
+              i++;
+              if (i < 102) {
+                myLoop2();
+              }
+            }, 35)
+          };
+
+          myLoop2();
           break;
       }
       stage--;
