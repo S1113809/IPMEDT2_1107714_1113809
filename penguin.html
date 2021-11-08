@@ -11,9 +11,23 @@
     <title>IPMEDT2</title>
 </head>
 <body>
+    <script src="./JS/main.js" defer></script>
     <main>
+        
         <article class="penguin__container">
-            <figure class="penguin">
+            <section class="textBubble" id="js--textBubble">
+                <p class="textBubble--text" id="js--textBubble-text">
+                    NOOT!
+                    <br>
+                    Leuk dat je me gevonden hebt! 
+                    <br>
+                    Ik zweef lekker verder,
+                    <br>
+                    NOOT!
+                </p>
+                <button class="textBubble--button" onclick="penguinClose()">Sluiten</button>
+            </section>
+            <figure class="penguin" onclick="penguinClick()">
                 <div class="penguin__bottom">
                     <div class="penguin__bottom--hand penguin__bottom--right-hand"></div>
                     <div class="penguin__bottom--hand penguin__bottom--left-hand"></div>

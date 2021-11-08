@@ -6,6 +6,7 @@
 html{
     font-size: 62.5%;
     font-family: 'Monda', sans-serif;
+    overflow-y: hidden;
 }
 body{
     background-color: var(--back-ground) ;
@@ -16,21 +17,26 @@ body{
     --black: #000000;
     --blue: #007eff;
     --blue-rgba: rgba(0, 126, 255, 0.4);
+    --dark-grey: #333333;
     --back-ground: #1a1a1a;
     --penguin-grey: #999999;    
     --penguin-orange: #ff9900;
     --penguin-pink: #ffe6e6;    
     --helmet-purple: #8b3f8d;
     --helmet-orange: #b36b00;
+
 }
+
 /* Penguin base from https://codepen.io/CyberGirl_/pen/qMmNxe */
 .penguin {
-    position: relative;
+    position: fixed;
     margin: auto;
     display: block;
-    margin-top: 5%;
+    top: 35rem;
     width: 300px;
     height: 300px;
+    animation: float 15s  infinite forwards linear;
+    left: calc(50% - 15rem);
 }
 .penguin * {
     position: absolute;
@@ -212,22 +218,71 @@ body{
     left: 75%;
 }
 
+/* TextBubble */
+.textBubble {
+	position: relative;
+	background:   var(--dark-grey);
+	border-radius: 50px;
+    width: 20rem;
+    height: 20rem;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 0;
+    padding: 2rem;   
+}
+
+.textBubble:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	border: 46px solid transparent;
+	border-top-color: var(--dark-grey);
+	border-bottom: 0;
+	margin-left: -50%;
+	margin-bottom: -30px;
+   
+}
+.textBubble--text{
+    text-align: center;
+    color: var(--white);
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.textBubble--button{
+    background: var(--back-ground);
+    color: var(--white);
+    width: 60%;
+    margin-left: 22.5%;
+    margin-top: 12.5%;
+    border: 1px dotted var(--penguin-orange);
+    padding: 0.3rem;
+    
+}
+.textBubble--button:hover{
+    background: var(--penguin-orange);
+    color: var(--black);
+    border: 2px solid var(--dark-grey);
+    cursor: pointer;
+}
+
+
 /* Animaties */
-@keyframes wave-left {
+@keyframes float{
     0%{
-        transform: rotate(90deg);
+        transform: rotate(0deg);
     }
     25%{
-        transform: rotate(70deg);
+        transform: rotate(20deg);
     }
     50%{
-        transform: rotate(90deg);
+        transform: rotate(0deg);
     }
     75%{
-        transform: rotate(70deg);
+        transform: rotate(-25deg);
     }
     100%{
-        transform: rotate(90deg);
+        transform: rotate(0deg);
     }
 }
 
