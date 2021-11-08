@@ -17,6 +17,7 @@ body{
   display: inline-block;
   flex-direction: row;
   overflow: scroll;
+  background: #101010;
 }
 
 main{
@@ -30,11 +31,9 @@ main{
 
 .backgroundContainer__background1{
   position: relative;
-  background: #101010;
 }
 
 .backgroundContainer__background2{
-  background: RED;
   position: absolute;
   right: -100vw;
   top: 0px;
@@ -42,7 +41,6 @@ main{
 }
 
 .backgroundContainer__background3{
-  background: BLUE;
   position: absolute;
   right: -200vw;
   top: 0px;
