@@ -1,0 +1,127 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+    font-family: 'Monda', sans-serif;
+    overflow-y: hidden;
+}
+body{
+    background-color: var(--back-ground) ;
+}
+:root{
+    --white: #ffffff;
+    --white-rgba: rgb(255, 255, 255, 0.7);
+    --black: #000000;
+    --blue: #007eff;
+    --blue-rgba: rgba(0, 126, 255, 0.4);
+    --dark-grey: #333333;
+    --back-ground: #1a1a1a;
+    --penguin-grey: #999999;    
+    --penguin-orange: #ff9900;
+    --penguin-pink: #ffe6e6;    
+    --helmet-purple: #8b3f8d;
+    --helmet-orange: #b36b00;
+
+}
+
+/* TextBubble */
+.textBubble {
+	position: relative;
+	background:   var(--dark-grey);
+	border-radius: 50px;
+    width: auto;
+    height: auto;
+    min-width: 25vw;
+    max-width: 35vw;
+    min-height: 25vh;    
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 0;
+    padding: 2rem;   
+}
+
+.textBubble:after {
+	content: '';
+	position: absolute;	
+	border: 46px solid transparent;	
+	margin-left: calc(-50%);
+	
+}
+.textBubble--arrow-down:after{
+    margin-bottom: -30px;
+    bottom: 0;
+    border-bottom: 0;
+    border-top-color: var(--dark-grey);	
+}
+
+.textBubble--arrow-up:after{
+    top: 0;
+    margin-top: -30px;
+    border-bottom-color: var(--dark-grey);	
+    border-top: 0;
+}
+.textBubble--heading{
+    font-size: 1.8rem;
+    color: var(--white);
+    text-align: center;
+    margin-bottom:1rem;
+}
+.textBubble--text{
+    text-align: center;
+    color: var(--white);
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+.planetTable {
+    display: block;
+    color: var(--white);
+    font-size: 1.2rem;
+    border-collapse: collapse;
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    align-self: center;
+}
+.planetTable--head{
+    font-style: bold;
+}
+.planetTable--content, .planetTable--head {
+    border: 1px solid var(--penguin-grey);
+    text-align: left;
+    padding: 8px;
+}
+
+.textBubble--button{
+    background: var(--back-ground);
+    color: var(--white);
+    width: 60%;
+    margin-left: 22.5%;
+    margin-top: 1rem;
+    border: 1px dotted var(--penguin-orange);
+    padding: 0.3rem;
+    
+}
+.textBubble--button:hover{
+    background: var(--penguin-orange);
+    color: var(--black);
+    border: 2px solid var(--dark-grey);
+    cursor: pointer;
+}
+
+.textBubble > ::-webkit-scrollbar{
+    height: 7.5px;
+}
+.textBubble > ::-webkit-scrollbar-track{
+    background: var(--penguin-grey);
+}
+.textBubble > ::-webkit-scrollbar-thumb{
+    background: var(--helmet-orange);
+}
+.textBubble > ::-webkit-scrollbar-thumb:hover{
+    background: var(--helmet-purple);
+    cursor: pointer;
+}
