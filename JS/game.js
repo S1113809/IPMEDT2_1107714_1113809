@@ -23,7 +23,7 @@ function stars(numberOfStars, divID){
         chosenDiv.innerHTML = text;
         chosenDiv.style.display = "block";
     }
-    text += "<figure class='background__planet'><img src='planet.webp'></figure>";
+    text += "<figure class='background__planet'><img src='planet"+ chosenDiv.id.toString().substring(14) +".webp' alt='planeet " + chosenDiv.id.toString().substring(14) + "'></figure>";
     chosenDiv.innerHTML = text;
 }
 
