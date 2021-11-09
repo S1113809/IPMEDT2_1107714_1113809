@@ -16,6 +16,10 @@ html{
   background: #101010;
 }
 
+body{
+  margin-top: 0;
+}
+
 main{
   z-index: 19;
 }
