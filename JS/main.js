@@ -33,6 +33,7 @@ window.onload = function () {
     else if(path == "/launch.html"){
         rocket_takeOf_audio.play();
         rocket_takeOf_audio.currentTime = JSON.parse(localStorage.getItem('launchSound'));
+        toMain();
     }
     // start app muted -> check if button is muted or not
     if (JSON.parse(localStorage.getItem('muted')) === true){
@@ -41,7 +42,6 @@ window.onload = function () {
     else if (JSON.parse(localStorage.getItem('muted')) === false) {
         unmute();
     }      
-    
 }
 
 function introAudio(){
@@ -79,7 +79,7 @@ function setLightDelay(){
     lightsOrange[4].classList.add("animation__delay--15");
     // yellow
     lightsYellow[1].classList.add("animation__delay--2");
-    lightsYellow[2].classList.add("animation__delay--05")
+    lightsYellow[2].classList.add("animation__delay--05");
     // green
     lightsGreen[0].classList.add("animation__delay--05");
     lightsGreen[1].classList.add("animation__delay--15");
@@ -106,10 +106,21 @@ function launch(){
         speed.innerHTML = Math.round(parseInt(speed.innerHTML) + delta);
         delta = delta * 1.1 ;
         if(parseInt(speed.innerHTML) > 600){
-            window.location.href = "launch.html";
-            localStorage.setItem('launchSound', rocket_takeOf_audio.currentTime);
+            toLaunch();
         }
-    }, 100);    
+    }, 100);        
+}
+
+function toLaunch(){
+    window.location.href = "launch.html";            
+    localStorage.setItem('launchSound', rocket_takeOf_audio.currentTime);
+}
+
+function toMain(){
+    setTimeout(function(){
+        console.log("in timeout");
+        window.location.href = "main.html";
+    }, 8000);
 }
 
 function toggleSound(){
@@ -123,7 +134,8 @@ function toggleSound(){
 function mute(){
     // Mute all audio
     document.querySelectorAll("audio").forEach(elem => {
-        elem.muted  = true}
+        elem.muted  = true;
+    }
     );
     for(let i = 0; i < soundsArray.length; i++){
         soundsArray[i].volume = 0;
@@ -136,11 +148,12 @@ function mute(){
 function unmute(){
     // Unmute all audio
     document.querySelectorAll("audio").forEach(elem => {
-        elem.muted  = false}
+        elem.muted  = false
+    ;}
     );
     for(let i = 0; i < soundsArray.length; i++){
         if(soundsArray[i] == rocket_takeOf_audio){
-            console.log("soft sound");
+            // console.log("soft sound");
             soundsArray[i].volume = 0.2;
         }
         else{
