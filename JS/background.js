@@ -87,10 +87,6 @@ function setStageBack(stageInt){
       let math2 = stageInt * 100;
       switch (stageInt) {
         case 1:
-          // background1.style.transform= "none";
-          // background2.style.transform= "none";
-          // background3.style.transform= "none";
-
           var i = 1;
 
           function myLoop() {
@@ -108,10 +104,6 @@ function setStageBack(stageInt){
           myLoop();
           break;
         case 2:
-          // background1.style.transform = "translateX(" + translation + "vw)";
-          // background2.style.transform = "translateX(-" + translation + "vw)";
-          // background3.style.transform = "none";
-
           var i = 1;
           function myLoop2() {
             setTimeout(function() {
