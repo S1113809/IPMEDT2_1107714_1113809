@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./CSS/rocket.css">
+    <link rel="stylesheet" href="./CSS/main.css">
+    <title>Echoes of Space!</title>
+  </head>
+
+  <body>
+    <script type="text/javascript" src="./JS/starsBG.js" defer> </script>
+    <script type="text/javascript" src="./JS/background.js" defer> </script>
+    <section class="backgroundContainer">
+      <section id="js--background1" class="backgroundContainer__background1 background"></section>
+      <section id="js--background2" class="backgroundContainer__background2 background"></section>
+      <section id="js--background3" class="backgroundContainer__background3 background"></section>
+    </div>
+    <main>
+      <section class="rocket__container">
+          <figure class="rocket">
+              <div class="rocket--body"></div>
+              <div class="rocket--fin fin--left"></div>
+              <div class="rocket--fin fin--right"></div>
+              <div class="rocket--fin fin--center"></div>
+              <div class="rocket--window"></div>
+          </figure>
+          <figure class="exhaust--flame"></figure>
+      </section>
+      <section class="navButtonContainer">
+        <button id="js--buttonLeft" class="navButton navButton--left navButton--noClick" type="button" name="left">🡰</button>
+        <button id="js--buttonRight" class="navButton navButton--right" type="button" name="right">🡲</button>
+      </section>
+    </main>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyAi273WMYzPbwzNA1HqINCNvUv0tmjIpL4",
+        authDomain: "ipmedt2-d9af8.firebaseapp.com",
+        projectId: "ipmedt2-d9af8",
+        storageBucket: "ipmedt2-d9af8.appspot.com",
+        messagingSenderId: "82898592577",
+        appId: "1:82898592577:web:f15843859f78685ace77c0",
+        measurementId: "G-96ZEKTKM3S"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+  </body>
+</html>

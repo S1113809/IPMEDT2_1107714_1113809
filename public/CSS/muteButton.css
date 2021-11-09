@@ -1,0 +1,88 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+    font-family: 'Monda', sans-serif;
+}
+body{
+    background-color: var(--back-ground) ;
+    margin-top: 5rem;
+}
+
+:root{
+    --back-ground: #1a1a1a;
+    --back-ground--panel: #343434;
+    --text-color: #FFFFFF;
+}
+.mute__container {
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    left:0;
+    top:0;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.toggle-sound {
+    background: var(--back-ground--panel);
+    width: 100%;
+    height: 100%;
+    color: var(--text-color);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 99;  
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    padding: 0.5rem 
+}
+.sound--icon {
+    color: var(--text-color);
+    font-size: 2.5rem;
+    transform: translateX(-70%);
+}
+.sound--wave {
+    position: absolute;
+    border: 0.3rem solid transparent;
+    border-right: 0.2rem solid var(--text-color);;
+    border-radius: 50%;
+    transition: all 200ms;
+    transform: translateX(-20%); 
+}
+.sound--wave_one {
+    width: 45%;
+    height: 40%;
+}
+.sound--wave_two {
+    width: 70%;
+    height: 62%;
+}
+.sound--wave_three {
+    width: 95%;
+    height:75%;
+}
+.sound-mute .sound--wave {
+    border-radius: 0;
+    width: 35%;
+    height: 35%;
+    border-width: 0 2px 0 0;
+    left: 1.2rem;
+}
+.sound-mute .sound--wave_one {
+    transform: rotate(45deg) translate3d(0, -50%, 0);
+}
+.sound-mute .sound--wave_two {
+    transform: rotate(-45deg) translate3d(0, 50%, 0);
+}
+.sound-mute .sound--wave_three {
+    opacity: 0;
+    transform: translateX(-46%);
+    height: 20%;
+}
+
+/* Credits to the creator Giannisrig at https://www.uplabs.com/posts/mute-unmute-button-with-material-design-animatio */

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- css for this page -->
+    <link rel="stylesheet" href="./CSS/rocket.css">
+    <link rel="stylesheet" href="./CSS/stars.css">
+    <!-- Style sheet for sound icon -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <link rel="stylesheet" href="./CSS/muteButton.css">
+    <!-- google fonts import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monda&display=swap" rel="stylesheet">
+    <title>Echoes of Space!</title>
+</head>
+<body>
+    <!-- javascript -->
+    <script type="text/javascript" src="./JS/main.js" defer> </script>
+    <script type="text/javascript" src="./JS/starsLaunch.js" defer> </script>
+
+    <!-- Mute audio button -->
+    <section class="mute__container">
+    <figure class="unmuted toggle-sound"  onclick="toggleSound()">
+        <i class="sound--icon fas">&#xf026;</i>
+        <div class="sound--wave sound--wave_one"></div>
+        <div class="sound--wave sound--wave_two"></div>
+        <div class="sound--wave sound--wave_three"></div>
+        </figure>
+    </section>
+
+    <section id="js--background1" class="backgroundContainer__background1 background"></section>
+
+    <section class="rocket__container">
+        <figure class="rocket">
+            <div class="rocket--body"></div>
+            <div class="rocket--fin fin--left"></div>
+            <div class="rocket--fin fin--right"></div>
+            <div class="rocket--fin fin--center"></div>
+            <div class="rocket--window"></div>
+        </figure>
+        <figure class="exhaust--flame"></figure>
+        <ul class="exhaust--fumes">
+            <li class="exhaust--fume"></li>
+            <li class="exhaust--fume"></li>
+            <li class="exhaust--fume"></li>
+            <li class="exhaust--fume"></li>
+            <li class="exhaust--fume"></li>
+            <li class="exhaust--fume"></li>
+            <li class="exhaust--fume"></li>
+            <li class="exhaust--fume"></li>
+            <li class="exhaust--fume"></li>
+        </ul>
+    </section>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyAi273WMYzPbwzNA1HqINCNvUv0tmjIpL4",
+          authDomain: "ipmedt2-d9af8.firebaseapp.com",
+          projectId: "ipmedt2-d9af8",
+          storageBucket: "ipmedt2-d9af8.appspot.com",
+          messagingSenderId: "82898592577",
+          appId: "1:82898592577:web:f15843859f78685ace77c0",
+          measurementId: "G-96ZEKTKM3S"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
+</body>
+</html>
