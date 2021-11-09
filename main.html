@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./CSS/rocket.css">
     <link rel="stylesheet" href="./CSS/main.css">
-    <title>Space!</title>
+    <title>Echoes of Space!</title>
   </head>
 
   <body>
-    <script type="text/javascript" src="./JS/game.js" defer> </script>
+    <script type="text/javascript" src="./JS/starsBG.js" defer> </script>
     <script type="text/javascript" src="./JS/background.js" defer> </script>
     <section class="backgroundContainer">
       <section id="js--background1" class="backgroundContainer__background1 background"></section>
@@ -17,6 +18,16 @@
       <section id="js--background3" class="backgroundContainer__background3 background"></section>
     </div>
     <main>
+      <section class="rocket__container">
+          <figure class="rocket">
+              <div class="rocket--body"></div>
+              <div class="rocket--fin fin--left"></div>
+              <div class="rocket--fin fin--right"></div>
+              <div class="rocket--fin fin--center"></div>
+              <div class="rocket--window"></div>
+          </figure>
+          <figure class="exhaust--flame"></figure>
+      </section>
       <section class="navButtonContainer">
         <button id="js--buttonLeft" class="navButton navButton--left navButton--noClick" type="button" name="left">🡰</button>
         <button id="js--buttonRight" class="navButton navButton--right" type="button" name="right">🡲</button>

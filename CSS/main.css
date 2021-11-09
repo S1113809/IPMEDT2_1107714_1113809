@@ -84,6 +84,14 @@ img{
   z-index: 20;
 }
 
+.rocket__container{
+  bottom: 40vh;
+  left: 30%;
+  animation: none;
+  opacity: 100;
+  transform: rotate(90deg);
+}
+
 .navButton--right{
   right: 0;
 }
@@ -118,6 +126,12 @@ img{
   .navButton{
     width: 30vh;
     height: 30vh;
+  }
+}
+
+@media screen and (min-width: 500px ) {
+  .rocket__container{
+    left: 10%;
   }
 }
 
