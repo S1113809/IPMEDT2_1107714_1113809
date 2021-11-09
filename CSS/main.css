@@ -1,4 +1,3 @@
-
 *{
     padding: 0;
     margin: 0;
@@ -6,10 +5,140 @@
 }
 html{
     font-size: 62.5%;
-    transition: 0.5s all;
-    font-family: 'Roboto Slab', serif;
-    background-color: var(--background-color);
+    font-family: 'Monda', sans-serif;
+    overflow: hidden;
 }
+
 body{
-    background-color: springgreen;
+  z-index: -1;
+}
+
+.backgroundContainer{
+  display: inline-block;
+  flex-direction: row;
+  overflow: scroll;
+  background: #101010;
+}
+
+main{
+  z-index: 19;
+}
+
+img{
+  height: 100%;
+  width: 100%;
+}
+
+.background{
+  width: 100vw;
+  height: 100vh;
+}
+
+.backgroundContainer__background1{
+  position: relative;
+}
+
+.backgroundContainer__background2{
+  position: absolute;
+  right: -100vw;
+  top: 0px;
+  /* transform: translateX(-100px); */
+}
+
+.backgroundContainer__background3{
+  position: absolute;
+  right: -200vw;
+  top: 0px;
+}
+
+.background__planet{
+  width: 25vh;
+  height: 25vh;
+  position: absolute;
+  top: 10vh;
+  right: 10vw;
+  z-index: 19;
+  transition: 0.3s;
+}
+
+.stars{
+  position: absolute;
+  background: #f1f1f1;
+  z-index: 18;
+  border-radius: 100%;
+}
+
+.navButton{
+  border: none;
+  font-size: 5rem;
+  font-weight: bolder;
+  position: absolute;
+  width: 30vw;
+  height: 30vw;
+  margin: 1rem;
+  bottom: 0;
+  border-radius: 0.5rem;
+  background: #F08080;
+  transition: 0.2s;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.rocket__container{
+  bottom: 40vh;
+  left: 30%;
+  animation: none;
+  opacity: 100;
+  transform: rotate(90deg);
+}
+
+.navButton--right{
+  right: 0;
+}
+
+.background__planet:hover{
+  cursor: pointer;
+  transform: scale(1.03) rotate(5deg);
+}
+
+.navButton:hover{
+  background-color: #CD5C5C;
+}
+
+.navButton:active{
+  box-shadow: inset 0 0 10px #000000;
+}
+
+.navButton--noClick{
+  opacity: 30%;
+}
+
+.navButton--noClick:hover{
+  cursor: default;
+  background: #F08080;
+}
+
+.navButton--noClick:active{
+  box-shadow: none;
+}
+
+@media (orientation: landscape) {
+  .navButton{
+    width: 30vh;
+    height: 30vh;
+  }
+}
+
+@media screen and (min-width: 500px ) {
+  .rocket__container{
+    left: 10%;
+  }
+}
+
+@media screen and (min-width: 1200px ) {
+  .navButton{
+    width: 20vh;
+    height: 20vh;
+    margin: 5rem;
+  }
 }

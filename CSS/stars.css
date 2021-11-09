@@ -1,0 +1,25 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+    font-family: 'Monda', sans-serif;
+}
+body{
+    background-color: var(--back-ground) ;
+    margin-top: 5rem;
+}
+
+@keyframes twinkle {
+    0% {
+      transform: scale(1, 1) rotate(0deg);
+    }
+    50% {
+      transform: scale(0.5, 0.5) rotate(180deg);
+    }
+    100% {
+      transform: scale(1, 1) rotate(360deg); 
+    }
+  }
