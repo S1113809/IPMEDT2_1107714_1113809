@@ -30,9 +30,10 @@ Altered to own wishes */
     position: absolute;
     bottom: -500;
     width: 80px;
-    left: calc(50% - 60px);  
-    animation: launch 8s 0.3s 1 forwards linear;  
-    opacity: 0;
+    left: calc(50% - 60px);
+    animation: launch 8s 0.3s 1 forwards linear;
+    opacity: 100;
+    z-index: 19;
 }
 .rocket{
     animation: bounce 0.5s infinite;
@@ -95,7 +96,7 @@ Altered to own wishes */
     background: var(--orange);
     border-radius: 0 0 50% 50%;
 }
-/* Exhaust flame */ 
+/* Exhaust flame */
 .exhaust--flame {
     position: absolute;
     top: 90%;
@@ -173,6 +174,21 @@ Altered to own wishes */
     left: 200px;
     top: 380px;
     animation: fumes 20s infinite;
+}
+
+.background{
+  width: 100vw;
+  height: 100vh;
+}
+
+.backgroundContainer__background1{
+  position: relative;
+}
+.stars{
+  position: absolute;
+  background: #f1f1f1;
+  z-index: 18;
+  border-radius: 100%;
 }
 
 /* Animations */

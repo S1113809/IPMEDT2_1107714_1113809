@@ -88,7 +88,6 @@ img{
   bottom: 40vh;
   left: 30%;
   animation: none;
-  z-index: 19;
   opacity: 100;
   transform: rotate(90deg);
 }
