@@ -23,10 +23,6 @@ function stars(numberOfStars, divID){
         chosenDiv.innerHTML = text;
         chosenDiv.style.display = "block";
     }
-    text += "<figure class='background__planet'><img src='./IMG/planet"+ chosenDiv.id.toString().substring(14) +".webp' alt='planeet " + chosenDiv.id.toString().substring(14) + "'></figure>";
-    chosenDiv.innerHTML = text;
 }
 
 stars(80, "js--background1");
-stars(500, "js--background2");
-stars(800, "js--background3");
