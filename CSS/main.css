@@ -58,6 +58,7 @@ img{
   top: 10vh;
   right: 10vw;
   z-index: 19;
+  transition: 0.3s;
 }
 
 .stars{
@@ -85,6 +86,11 @@ img{
 
 .navButton--right{
   right: 0;
+}
+
+.background__planet:hover{
+  cursor: pointer;
+  transform: scale(1.03) rotate(5deg);
 }
 
 .navButton:hover{
