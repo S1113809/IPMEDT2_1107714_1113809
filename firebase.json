@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "ipmedt2-space",
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
