@@ -29,8 +29,8 @@
           <figure class="exhaust--flame"></figure>
       </section>
       <section class="navButtonContainer">
-        <button id="js--buttonLeft" class="navButton navButton--left navButton--noClick" type="button" name="left">🡰</button>
-        <button id="js--buttonRight" class="navButton navButton--right" type="button" name="right">🡲</button>
+        <button id="js--buttonLeft" class="navButton navButton--left navButton--noClick" type="button" name="left"><</button>
+        <button id="js--buttonRight" class="navButton navButton--right" type="button" name="right">></button>
       </section>
     </main>
     <script type="module">
@@ -39,7 +39,7 @@
       import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-analytics.js";
       // TODO: Add SDKs for Firebase products that you want to use
       // https://firebase.google.com/docs/web/setup#available-libraries
-    
+
       // Your web app's Firebase configuration
       // For Firebase JS SDK v7.20.0 and later, measurementId is optional
       const firebaseConfig = {
@@ -51,7 +51,7 @@
         appId: "1:82898592577:web:f15843859f78685ace77c0",
         measurementId: "G-96ZEKTKM3S"
       };
-    
+
       // Initialize Firebase
       const app = initializeApp(firebaseConfig);
       const analytics = getAnalytics(app);
