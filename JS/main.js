@@ -1,3 +1,4 @@
+
 console.log("JS LOADED");
 
 // vars to alter
@@ -124,3 +125,4 @@ function unmute(){
         soundsArray[i].volume = 1;
     }
 }
+
