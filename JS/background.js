@@ -6,9 +6,13 @@ const background1 = document.getElementById("js--background1");
 const background2 = document.getElementById("js--background2");
 const background3 = document.getElementById("js--background3");
 
+const rocketAni = document.getElementById("js--rocket");
+
+
 let stage = 0;
 
 buttonRight.addEventListener("click", function(){
+  toTouchDown();
     setStageForward(stage);
     checkStage();
   }
@@ -34,7 +38,7 @@ function setStageForward(stageInt){
   const translation = (stageInt + 1) * 100;
   const prevTranslation = translation - 100;
   let math = prevTranslation + 1;
-  console.log(stage);
+  console.log("Stage" + stage.toString());
 
   switch (stageInt) {
     case 0:
@@ -126,4 +130,12 @@ function setStageBack(stageInt){
     console.log(stageInt);
     stage = 0;
   }
+}
+
+function toTouchDown(){
+  setTimeout(function(){
+      window.location.href = "launch.html";
+      rocketAni.classList.remove('launch');
+      rocketAni.classList.add('touchDown');
+  },3000);    
 }

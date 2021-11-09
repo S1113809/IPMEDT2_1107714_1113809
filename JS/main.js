@@ -5,7 +5,13 @@ console.log("JS LOADED");
 let intTemp = document.getElementById("js--internalTemp");
 let extTemp = document.getElementById("js--externalTemp");
 let speed = document.getElementById("js--speed");
+
+// Const vars
 const launchButton = document.getElementById("js--launchButton");
+// MuteButton
+const muteButton = document.querySelector(".toggle-sound");
+const rocket = document.getElementById("js--rocket");
+
 // get lights to set delays
 const lightsRed = document.getElementsByClassName("light--red");
 const lightsOrange = document.getElementsByClassName("light--orange");
@@ -16,24 +22,30 @@ const lightsBlue = document.getElementsByClassName("light--blue");
 const intro_audio = document.querySelector(".introAudio");
 const rocket_takeOf_audio = new Audio("./Sounds/Rocket_take_off.wav");
 let soundsArray =[rocket_takeOf_audio];
-// MuteButton
-const muteButton = document.querySelector(".toggle-sound");
+
 
 
 window.onload = function () {
     // Functions to execute on start
     var path = window.location.pathname;
-    if(path == "/"){
+    console.log(path);
+    console.log("Launched " + JSON.parse(localStorage.getItem('launched')).toString());
+    if(path.toString().includes("/index.html")){
         loadTemps();
         setLightDelay();
         introAudio();
         // set default to muted
         localStorage.setItem('muted', true);
+        localStorage.setItem('launched', false);
     }  
-    else if(path == "/launch.html"){
-        rocket_takeOf_audio.play();
-        rocket_takeOf_audio.currentTime = JSON.parse(localStorage.getItem('launchSound'));
-        toMain();
+    else if(path.toString().includes("/launch.html")){   
+        if(JSON.parse(localStorage.getItem('launched')) === true){
+            console.log("to Main");
+            toMain();
+            localStorage.setItem("launched", false);
+        }else{
+            showEnd();
+        }
     }
     // start app muted -> check if button is muted or not
     if (JSON.parse(localStorage.getItem('muted')) === true){
@@ -112,8 +124,10 @@ function launch(){
 }
 
 function toLaunch(){
-    window.location.href = "launch.html";            
     localStorage.setItem('launchSound', rocket_takeOf_audio.currentTime);
+    localStorage.setItem('launched', true);
+    window.location.href = "launch.html";   
+    rocket.classList.add("launch");
 }
 
 function toMain(){
@@ -121,7 +135,9 @@ function toMain(){
         console.log("in timeout");
         window.location.href = "main.html";
     }, 8000);
+    
 }
+
 
 function toggleSound(){
     if(muteButton.classList.contains("sound-mute")){
@@ -130,7 +146,9 @@ function toggleSound(){
         mute();
     }
 }
-
+function showEnd(){
+    console.log("einde app");
+}
 function mute(){
     // Mute all audio
     document.querySelectorAll("audio").forEach(elem => {
