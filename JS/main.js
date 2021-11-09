@@ -23,8 +23,7 @@ const muteButton = document.querySelector(".toggle-sound");
 window.onload = function () {
     // Functions to execute on start
     var path = window.location.pathname;
-    console.log(path);
-    if(path == "/"){
+    if(path.toString().includes("/index.html") == true){
         loadTemps();
         setLightDelay();
         introAudio();
