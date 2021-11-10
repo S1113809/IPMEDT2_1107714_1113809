@@ -1,3 +1,5 @@
+// Validator: no errors
+// Fixed semicolon warnings :)
 console.log("JS background loaded");
 
 const buttonRight = document.getElementById("js--buttonRight");
@@ -49,8 +51,8 @@ function setStageForward(stageInt){
           if (i < 101) {
             myLoop();
           }
-        }, 35)
-      };
+        }, 35);
+      }
 
       myLoop();
       break;
@@ -67,8 +69,8 @@ function setStageForward(stageInt){
           if (i < 101) {
             myLoop2();
           }
-        }, 35)
-      };
+        }, 35);
+      }
 
       myLoop2();
       break;
@@ -102,7 +104,7 @@ function setStageBack(stageInt){
               if (i < 101) {
                 myLoop();
               }
-            }, 35)
+            }, 35);
           };
 
           myLoop();
@@ -118,8 +120,8 @@ function setStageBack(stageInt){
               if (i < 102) {
                 myLoop2();
               }
-            }, 35)
-          };
+            }, 35);
+          }
 
           myLoop2();
           break;

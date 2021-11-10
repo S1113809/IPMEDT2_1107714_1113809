@@ -1,4 +1,5 @@
-
+// Validator: no errors
+// Fixed semicolon warnings
 console.log("JS LOADED");
 
 // vars to alter
@@ -27,7 +28,7 @@ window.onload = function () {
         // console.log("in path launch toMain");
         toMain();
     }         
-}
+};
 
 function loadTemps(){
     // Create ints to show as temperatures

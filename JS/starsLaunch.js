@@ -1,3 +1,4 @@
+// Validator: no errors
 console.log("JS stars LOADED");
 
 function stars(numberOfStars, divID){
