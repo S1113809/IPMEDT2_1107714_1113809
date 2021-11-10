@@ -8,7 +8,7 @@ html{
     font-family: 'Monda', sans-serif;
 }
 body{
-    background-color: var(--back-ground) ;
+    background: #101010;
     margin-top: 5rem;
 }
 
@@ -35,11 +35,11 @@ body{
     color: var(--text-color);
     border-radius: 50%;
     cursor: pointer;
-    z-index: 99;  
+    z-index: 99;
     display: flex;
     justify-content: center;
-    align-items: center; 
-    padding: 0.5rem 
+    align-items: center;
+    padding: 0.5rem
 }
 .sound--icon {
     color: var(--text-color);
@@ -52,7 +52,7 @@ body{
     border-right: 0.2rem solid var(--text-color);;
     border-radius: 50%;
     transition: all 200ms;
-    transform: translateX(-20%); 
+    transform: translateX(-20%);
 }
 .sound--wave_one {
     width: 45%;

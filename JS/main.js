@@ -14,11 +14,7 @@ const lightsGreen = document.getElementsByClassName("light--green");
 const lightsBlue = document.getElementsByClassName("light--blue");
 // Audio's
 const intro_audio = document.querySelector(".introAudio");
-const rocket_takeOf_audio = new Audio("./Sounds/Rocket_take_off.wav");
-let soundsArray =[rocket_takeOf_audio];
-// MuteButton
-const muteButton = document.querySelector(".toggle-sound");
-
+// const rocket_takeOf_audio = new Audio("./Sounds/Rocket_take_off.wav");
 
 window.onload = function () {
     // Functions to execute on start
@@ -26,37 +22,12 @@ window.onload = function () {
     if(path.toString().includes("/index.html") == true){
         loadTemps();
         setLightDelay();
-        introAudio();
-        // set default to muted
-        localStorage.setItem('muted', true);
-    }
-    else if(path.toString().includes("/launch.html") == true){
-        rocket_takeOf_audio.play();
-        rocket_takeOf_audio.currentTime = JSON.parse(localStorage.getItem('launchSound'));
+    }  
+    else if(path == "/launch.html"){
+        // console.log("in path launch toMain");
         toMain();
-    }
-    // start app muted -> check if button is muted or not
-    if (JSON.parse(localStorage.getItem('muted')) === true){
-        mute();
-    }
-    else if (JSON.parse(localStorage.getItem('muted')) === false) {
-        unmute();
-    }
+    }         
 }
-
-function introAudio(){
-    let playAttempt = setInterval(() => {
-        intro_audio.play()
-          .then(() => {
-            clearInterval(playAttempt);
-          })
-          .catch(error => {
-            console.log('Unable to play the video, User has not interacted yet.');
-          });
-      }, 500);
-      intro_audio.volume = 1;
-}
-
 
 function loadTemps(){
     // Create ints to show as temperatures
@@ -117,49 +88,10 @@ function toLaunch(){
 }
 
 function toMain(){
+    console.log("in toMain");
     setTimeout(function(){
         console.log("in timeout");
         window.location.href = "main.html";
     }, 8000);
 }
 
-function toggleSound(){
-    if(muteButton.classList.contains("sound-mute")){
-        unmute();
-    }else{
-        mute();
-    }
-}
-
-function mute(){
-    // Mute all audio
-    document.querySelectorAll("audio").forEach(elem => {
-        elem.muted  = true;
-    }
-    );
-    for(let i = 0; i < soundsArray.length; i++){
-        soundsArray[i].volume = 0;
-    }
-    muteButton.classList.add("sound-mute");
-    localStorage.setItem('muted', true);
-
-}
-
-function unmute(){
-    // Unmute all audio
-    document.querySelectorAll("audio").forEach(elem => {
-        elem.muted  = false
-    ;}
-    );
-    for(let i = 0; i < soundsArray.length; i++){
-        if(soundsArray[i] == rocket_takeOf_audio){
-            // console.log("soft sound");
-            soundsArray[i].volume = 0.2;
-        }
-        else{
-            soundsArray[i].volume = 1;
-        }
-    }
-    muteButton.classList.remove("sound-mute");
-    localStorage.setItem('muted', false);
-}
