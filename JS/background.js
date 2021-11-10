@@ -134,8 +134,6 @@ function setStageBack(stageInt){
 
 function toTouchDown(){
   setTimeout(function(){
-      window.location.href = "launch.html";
-      rocketAni.classList.remove('launch');
-      rocketAni.classList.add('touchDown');
+      window.location.href = "touchDown.html";
   },3000);    
 }

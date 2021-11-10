@@ -30,8 +30,8 @@
         </figure>
     </section>
     
-    <section class="rocket__container launch" id="js--rocket">
-        <figure class="rocket bounce">
+    <section class="rocket__container  touchDown" id="js--rocket">
+        <figure class="rocket">
             <div class="rocket--body"></div>
             <div class="rocket--fin fin--left"></div>
             <div class="rocket--fin fin--right"></div>
@@ -51,6 +51,15 @@
             <li class="exhaust--fume"></li>
         </ul>
     </section>   
+    <section class="textBubble textBubble--arrow-down" id="js--textBubble">
+        <h3 class="textBubble--heading">Welkom terug op aarde!</h3>
+        <p class="textBubble--text">
+            Hopelijk heb je een goede reis gehad astronaut.
+        </p>
+        <p class="textBubble--text">Als je de reis nog een keer wil doen keer dan terug naar de startpagina.</p>
+        <button class="textBubble--button" onclick="window.location.href='index.html'">Startpagina</button>
+    </section>
+
     <script type="module">
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";

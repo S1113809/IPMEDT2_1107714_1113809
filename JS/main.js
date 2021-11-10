@@ -29,23 +29,19 @@ window.onload = function () {
     // Functions to execute on start
     var path = window.location.pathname;
     console.log(path);
-    console.log("Launched " + JSON.parse(localStorage.getItem('launched')).toString());
     if(path.toString().includes("/index.html")){
         loadTemps();
         setLightDelay();
         introAudio();
         // set default to muted
         localStorage.setItem('muted', true);
-        localStorage.setItem('launched', false);
     }  
     else if(path.toString().includes("/launch.html")){   
-        if(JSON.parse(localStorage.getItem('launched')) === true){
-            console.log("to Main");
+            // console.log("to Main");
             toMain();
-            localStorage.setItem("launched", false);
-        }else{
-            showEnd();
-        }
+    }
+    else if(path.toString().includes("/touchDown.html")){
+        touchDown();
     }
     // start app muted -> check if button is muted or not
     if (JSON.parse(localStorage.getItem('muted')) === true){
@@ -53,7 +49,7 @@ window.onload = function () {
     }
     else if (JSON.parse(localStorage.getItem('muted')) === false) {
         unmute();
-    }      
+    } 
 }
 
 function introAudio(){
@@ -125,9 +121,7 @@ function launch(){
 
 function toLaunch(){
     localStorage.setItem('launchSound', rocket_takeOf_audio.currentTime);
-    localStorage.setItem('launched', true);
     window.location.href = "launch.html";   
-    rocket.classList.add("launch");
 }
 
 function toMain(){
@@ -145,6 +139,12 @@ function toggleSound(){
     }else{
         mute();
     }
+}
+
+function touchDown(){
+    setTimeout(function(){
+        showEnd();
+    }, 8000);
 }
 function showEnd(){
     console.log("einde app");

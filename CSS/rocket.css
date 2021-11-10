@@ -17,12 +17,14 @@ body{
     --white: #f5f5ff;
     --lightgrey: #dadada;
     --midgrey: #b4b2b2;
-    --darkgrey: #4d4646;
+    --rocket-darkgrey: #4d4646;
+    --dark-grey: #333333;
     --red: #f01a19;
     --darkred: #880f01;
     --blue: #007eff;
     --orange: #ff7700;
     --green: #00af04;
+    --button-orange: #ff9900;
 }
 /* main idea and base from: https://codepen.io/eva_trostlos/pen/akQoLN
 Altered to own wishes */
@@ -31,7 +33,7 @@ Altered to own wishes */
     width: 80px;
     left: calc(50% - 60px);  
 }
-.rocket{
+.bounce{
     animation: bounce 0.5s infinite;
 }
 .launch{
@@ -40,8 +42,8 @@ Altered to own wishes */
     animation: launch 8s 0.3s 1 forwards linear;  
 }
 .touchDown{
-    opacity: 1;
-    top: -500px;
+    opacity: 0;
+    top: 0;
     animation: touchDown 8s 0.3s 1 forwards linear;  
 }
 .rocket--body{
@@ -73,7 +75,7 @@ Altered to own wishes */
     background-color: var(--blue);
     left: calc(50% - 20px);
     top: 40px;
-    border: 5px solid var(--darkgrey);
+    border: 5px solid var(--rocket-darkgrey);
 }
 .rocket--fin {
     position: absolute;
@@ -181,7 +183,51 @@ Altered to own wishes */
     top: 380px;
     animation: fumes 20s infinite;
 }
+/* TextBubble */
+.textBubble {
+	position: relative;
+	background:   var(--dark-grey);
+	border-radius: 50px;
+    width: auto;
+    height: auto;
+    min-width: 25vw;
+    max-width: 35vw;
+    min-height: 25vh;    
+    margin: auto;
+    margin-top: 15%;
+    margin-bottom: 0;
+    padding: 2rem;   
+}
+.textBubble--heading{
+    font-size: 1.8rem;
+    color: var(--white);
+    text-align: center;
+    margin-bottom:1rem;
+}
+.textBubble--text{
+    text-align: center;
+    color: var(--white);
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
 
+.textBubble--button{
+    background: var(--back-ground);
+    color: var(--white);
+    width: 60%;
+    margin-left: 22.5%;
+    margin-top: 12.5%;
+    border: 1px dotted var(--button-orange);
+    padding: 0.3rem;
+    
+}
+.textBubble--button:hover{
+    background: var(--button-orange);
+    color: var(--black);
+    border: 2px solid var(--dark-grey);
+    cursor: pointer;
+}
 /* Animations */
 /* Exhaust */
 @keyframes fumes {
@@ -239,7 +285,11 @@ Altered to own wishes */
     0%{
         top: -600px;
     }
+    10%{
+        opacity: 0.5;
+    }
     100%{
-        bottom: 0%;
+        top: 80%;
+        opacity: 1;
     }
 }
