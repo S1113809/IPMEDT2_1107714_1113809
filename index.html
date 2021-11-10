@@ -7,14 +7,14 @@
 
     <!-- own made style sheets -->
     <link rel="stylesheet" href="./CSS/splashScreen.css">
-    <link rel="stylesheet" href="./CSS/mutebutton.css">
+    <link rel="stylesheet" href="./CSS/muteButton.css">
     <!-- Style sheet for sound icon -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
     <!-- google fonts import -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Monda&display=swap" rel="stylesheet">
-    <title>IPMEDT2</title>
+    <title>Echoes of Space!</title>
   </head>
   <body>
       <script type="text/javascript" src="./JS/main.js" defer> </script>
@@ -64,26 +64,26 @@
         <section class="information__container information--speed">
           <p class="information--text information--type">Speed</p>
           <p class="information--text information--dots">:</p>
-          <p class="information--text information--value"><span id="js--speed">0</span> Km/h</p> 
+          <p class="information--text information--value"><span id="js--speed">0</span> Km/h</p>
         </section>
         <section class="information__container information--int-temp">
           <p class="information--text information--type">Internal temperature</p>
           <p class="information--text information--dots">:</p>
-          <p class="information--text information--value"><span id="js--internalTemp">15</span> &#x2103;</p> 
+          <p class="information--text information--value"><span id="js--internalTemp">15</span> &#x2103;</p>
           <!-- &#x2103; gives celsius symbol -->
         </section>
         <section class="information__container information--ext-temp">
           <p class="information--text information--type">External temperature</p>
           <p class="information--text information--dots">:</p>
-          <p class="information--text information--value"><span id="js--externalTemp">10</span> &#x2103;</p> 
+          <p class="information--text information--value"><span id="js--externalTemp">10</span> &#x2103;</p>
           <!-- &#x2103; gives celsius symbol -->
         </section>
         <section class="information__container information--pressure">
           <p class="information--text information--type">Cabin pressure</p>
           <p class="information--text information--dots">:</p>
-          <p class="information--text information--value">750 mBar</p> 
+          <p class="information--text information--value">750 mBar</p>
         </section>
-        
+
       </section>
       <script type="module">
         // Import the functions you need from the SDKs you need
@@ -91,7 +91,7 @@
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-analytics.js";
         // TODO: Add SDKs for Firebase products that you want to use
         // https://firebase.google.com/docs/web/setup#available-libraries
-      
+
         // Your web app's Firebase configuration
         // For Firebase JS SDK v7.20.0 and later, measurementId is optional
         const firebaseConfig = {
@@ -103,11 +103,10 @@
           appId: "1:82898592577:web:f15843859f78685ace77c0",
           measurementId: "G-96ZEKTKM3S"
         };
-      
+
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const analytics = getAnalytics(app);
       </script>
   </body>
 </html>
-

@@ -12,21 +12,21 @@ const lightsOrange = document.getElementsByClassName("light--orange");
 const lightsYellow = document.getElementsByClassName("light--yellow");
 const lightsGreen = document.getElementsByClassName("light--green");
 const lightsBlue = document.getElementsByClassName("light--blue");
-// Audio's 
+// Audio's
 const intro_audio = document.querySelector(".introAudio");
 // const rocket_takeOf_audio = new Audio("./Sounds/Rocket_take_off.wav");
 
 window.onload = function () {
     // Functions to execute on start
     var path = window.location.pathname;
-    if(path == "/"){
+    if(path.toString().includes("/index.html") == true){
         loadTemps();
         setLightDelay();
     }  
     else if(path == "/launch.html"){
-        console.log("in path launch toMain");
+        // console.log("in path launch toMain");
         toMain();
-    }    
+    }         
 }
 
 function loadTemps(){
@@ -59,7 +59,7 @@ function setLightDelay(){
 }
 
 function launch(){
-    // Launching 
+    // Launching
     // Play audio
     rocket_takeOf_audio.play();
     // Hold button on hover/active state -> appearing to be pushed down
@@ -79,11 +79,11 @@ function launch(){
         if(parseInt(speed.innerHTML) > 600){
             toLaunch();
         }
-    }, 100);        
+    }, 100);
 }
 
 function toLaunch(){
-    window.location.href = "launch.html";            
+    window.location.href = "launch.html";
     localStorage.setItem('launchSound', rocket_takeOf_audio.currentTime);
 }
 
@@ -94,3 +94,4 @@ function toMain(){
         window.location.href = "main.html";
     }, 8000);
 }
+
