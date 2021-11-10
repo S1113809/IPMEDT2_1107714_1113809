@@ -28,7 +28,7 @@ body{
 }
 
 .penguin__container{
-  transform: translateX(-5vw);
+  transform: translateX(-20vw);
 }
 
 /* Penguin base from https://codepen.io/CyberGirl_/pen/qMmNxe */
@@ -240,6 +240,7 @@ body{
     margin-top: 5%;
     margin-bottom: 0;
     padding: 2rem;
+    z-index: 99;
 }
 
 .textBubble:after {
