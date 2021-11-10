@@ -44,7 +44,7 @@ Altered to own wishes */
 .touchDown{
     opacity: 0;
     top: 0;
-    animation: touchDown 8s 0.3s 1 forwards linear;  
+    animation: touchDown 12s 0.3s 1 forwards linear;  
 }
 .rocket--body{
     background-color: var(--midgrey);

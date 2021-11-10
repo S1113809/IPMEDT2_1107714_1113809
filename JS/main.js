@@ -37,8 +37,9 @@ window.onload = function () {
         localStorage.setItem('muted', true);
     }  
     else if(path.toString().includes("/launch.html")){   
-            // console.log("to Main");
-            toMain();
+        // console.log("to Main");
+        rocketAudio();
+        toMain();
     }
     else if(path.toString().includes("/touchDown.html")){
         touchDown();
@@ -98,7 +99,8 @@ function setLightDelay(){
 function launch(){
     // Launching 
     // Play audio
-    rocket_takeOf_audio.play();
+    localStorage.setItem('launchSound', 0)
+    rocketAudio();
     // Hold button on hover/active state -> appearing to be pushed down
     launchButton.classList.add("active");
     document.querySelector(".information").classList.add("stand-out");
@@ -118,10 +120,16 @@ function launch(){
         }
     }, 100);        
 }
+function rocketAudio(){
+    console.log("audio ");
+    rocket_takeOf_audio.play();
+    rocket_takeOf_audio.currentTime = JSON.parse(localStorage.getItem('launchSound'));
+}
 
 function toLaunch(){
     localStorage.setItem('launchSound', rocket_takeOf_audio.currentTime);
-    window.location.href = "launch.html";   
+    window.location.href = "launch.html";  
+    rocketAudio();
 }
 
 function toMain(){
@@ -142,6 +150,8 @@ function toggleSound(){
 }
 
 function touchDown(){
+    localStorage.setItem("launchSound", 0);
+    rocketAudio();
     setTimeout(function(){
         showEnd();
     }, 8000);
