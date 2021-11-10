@@ -1,5 +1,7 @@
+
 // Validator: no errors
 // Fixed semicolon warnings
+
 console.log("JS LOADED");
 
 // vars to alter
@@ -95,4 +97,6 @@ function toMain(){
         window.location.href = "main.html";
     }, 8000);
 }
+
+
 
