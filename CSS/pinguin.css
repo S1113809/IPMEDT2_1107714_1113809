@@ -29,14 +29,15 @@ body{
 
 /* Penguin base from https://codepen.io/CyberGirl_/pen/qMmNxe */
 .penguin {
-    position: fixed;
+    position: relative;
     margin: auto;
     display: block;
-    top: 35rem;
-    width: 300px;
-    height: 300px;
+    top: -120rem;
+    width: 100px;
+    height: 100px;
     animation: float 15s  infinite forwards linear;
-    left: calc(50% - 15rem);
+    left: -10%;
+    z-index: 99;
 }
 .penguin * {
     position: absolute;
