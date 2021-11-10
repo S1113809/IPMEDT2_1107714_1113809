@@ -10,6 +10,7 @@ function stars(numberOfStars, divID){
       return array[Math.floor(Math.random() * array.length)];
     }
 
+    //random sterren genereren
     let text = "";
     let i;
     for (i = 0; i < numberOfStars; i++) {
@@ -26,4 +27,5 @@ function stars(numberOfStars, divID){
     }
 }
 
+//aanroepen
 stars(80, "js--background1");

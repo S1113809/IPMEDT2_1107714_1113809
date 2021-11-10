@@ -2,6 +2,7 @@
 // Fixed semicolon warnings :)
 console.log("JS background loaded");
 
+//import divs
 const buttonRight = document.getElementById("js--buttonRight");
 const buttonLeft = document.getElementById("js--buttonLeft");
 const background1 = document.getElementById("js--background1");
@@ -10,17 +11,20 @@ const background3 = document.getElementById("js--background3");
 
 let stage = 0;
 
+//button naar rechts
 buttonRight.addEventListener("click", function(){
     setStageForward(stage);
     checkStage();
   }
 );
 
+//button naar links
 buttonLeft.addEventListener("click", function(){
     setStageBack(stage);
     checkStage();
 });
 
+//zet button naar links op niet clickable wanneer het niet mogelijk is
 function checkStage(){
   switch (stage){
     case 0:
@@ -32,6 +36,7 @@ function checkStage(){
   }
 }
 
+//animeer vooruit
 function setStageForward(stageInt){
   const translation = (stageInt + 1) * 100;
   const prevTranslation = translation - 100;
@@ -84,6 +89,8 @@ function setStageForward(stageInt){
   console.log(stage);
 }
 
+
+//animeer achteruit
 function setStageBack(stageInt){
   if (stageInt > 0) {
       let translation = (stageInt - 1) * 100;
