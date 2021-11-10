@@ -1,3 +1,5 @@
+// Validator: no errors
+
 // Audio info vars
 const rocket_takeOf_audio = new Audio("./Sounds/Rocket_take_off.wav");
 const space_audio = new Audio("./Sounds/era-of-space.mp3");

@@ -1,0 +1,299 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+    font-family: 'Monda', sans-serif;
+    overflow-y: hidden;
+}
+body{
+    background-color: var(--back-ground) ;
+}
+:root{
+    --white: #ffffff;
+    --white-rgba: rgb(255, 255, 255, 0.7);
+    --black: #000000;
+    --blue: #007eff;
+    --blue-rgba: rgba(0, 126, 255, 0.4);
+    --dark-grey: #333333;
+    --back-ground: #1a1a1a;
+    --penguin-grey: #999999;
+    --penguin-orange: #ff9900;
+    --penguin-pink: #ffe6e6;
+    --helmet-purple: #8b3f8d;
+    --helmet-orange: #b36b00;
+
+}
+
+.penguin__container{
+  transform: translateX(-20vw);
+}
+
+/* Penguin base from https://codepen.io/CyberGirl_/pen/qMmNxe */
+.penguin {
+    margin: auto;
+    margin-top: 30px;
+    display: block;
+    top: -120rem;
+    width: 100px;
+    height: 100px;
+    animation: float 15s  infinite forwards linear;
+    left: -10%;
+    z-index: 99;
+    text-align: center;
+}
+
+.penguin:hover{
+  cursor: pointer;
+}
+
+.penguin * {
+    position: absolute;
+}
+
+/* Body */
+.penguin__top{
+    top: 10%;
+    left: 25%;
+    background: var(--penguin-grey, grey);
+    width: 50%;
+    height: 45%;
+    border-radius: 70% 70% 60% 60%;
+}
+.penguin__bottom{
+    top: 40%;
+    left: 23.5%;
+    background: var(--penguin-grey, grey);
+    width: 53%;
+    height: 45%;
+    border-radius: 70% 70% 100% 100%;
+}
+.penguin__top--belly {
+    top: 60%;
+    left: 2.5%;
+    background: var(--white, white);
+    width: 95%;
+    height: 100%;
+    border-radius: 120% 120% 100% 100%;
+}
+
+/* Face */
+.penguin__top--cheek{
+    top: 15%;
+    background: var(--white, white);
+    width: 60%;
+    height: 70%;
+    border-radius: 70% 70% 60% 60%;
+}
+.penguin__top--right-cheek {
+    left: 35%;
+}
+.penguin__top--left-cheek {
+    left: 5%;
+}
+.penguin__top--eye{
+    top: 45%;
+    background: var(--black, black);
+    width: 15%;
+    height: 17%;
+    border-radius: 50%;
+}
+.penguin__top--right-eye {
+    left: 60%;
+}
+.penguin__top--left-eye {
+    left: 25%;
+}
+.penguin__top__eye--sparkle {
+    top: 25%;
+    left: 15%;
+    background: var(--white, black);
+    width: 35%;
+    height: 35%;
+    border-radius: 50%;
+}
+.penguin__top--blush{
+    top: 65%;
+    background: var(--penguin-pink, pink);
+    width: 15%;
+    height: 10%;
+    border-radius: 50%;
+}
+.penguin__top--blush-right {
+    left: 15%;
+}
+.penguin__top--blush-left {
+    left: 70%;
+}
+.penguin__top--beak{
+    background: var(--penguin-orange, orange);
+    height: 10%;
+    border-radius: 50%;
+}
+.penguin__top--beak-top {
+    top: 60%;
+    left: 40%;
+    width: 20%;
+}
+.penguin__top--beak-bottom {
+    top: 65%;
+    left: 42%;
+    width: 16%;
+}
+
+/* Hands */
+.penguin__bottom--hand{
+    background: var(--penguin-grey, grey);
+    width: 30%;
+    height: 60%;
+}
+.penguin__bottom--right-hand {
+    transform: rotate(45deg);
+    left: 10%;
+    top: 5%;
+    border-radius: 30% 30% 120% 30%;
+    z-index: -1;
+    transform-origin: 0% 0%;
+}
+.penguin__bottom--left-hand {
+    top: 5%;
+    left: 80%;
+    transform: rotate(-45deg);
+    z-index: -1;
+    border-radius: 30% 30% 30% 120%;
+}
+
+/* Feet */
+.penguin__bottom--feet{
+    top: 85%;
+    background: var(--penguin-orange, orange);
+    width: 15%;
+    height: 30%;
+    border-radius: 50% 50% 50% 50%;
+    z-index: -500;
+}
+.penguin__bottom--right-feet {
+    left: 60%;
+     transform: rotate(-80deg);
+}
+.penguin__bottom--left-feet {
+    left: 25%;
+    transform: rotate(80deg);
+}
+
+/* Helmet */
+.penguin__helmet{
+    width: 100%;
+    height: 100%;
+}
+.penguin__helmet--base{
+    background: var(--helmet-purple);
+    width: 70%;
+    height: 55%;
+    left:  15%;
+    z-index: -500;
+    border-radius: 50%;
+}
+.penguin__helmet--glass{
+    width: 65%;
+    height: 50%;
+    left: 17.5%;
+    top: 2.5%;
+    background-color: var(--blue-rgba);
+    border-radius: 50%;
+    border-bottom: 10px solid var(--helmet-purple);
+    z-index: 8;
+}
+.penguin__helmet--shine{
+    width: 15%;
+    height: 10%;
+    top: 7.5%;
+    left: 27.5%;
+    background: var(--white-rgba);
+    border-radius: 50%;
+}
+.penguin__helmet--side{
+    width: 15%;
+    height: 15%;
+    top: 20%;
+    background: var(--helmet-orange);
+    border-radius: 50%;
+    z-index: -550;
+}
+.penguin__helmet--side-left{
+    left: 10%;
+}
+.penguin__helmet--side-right{
+    left: 75%;
+}
+
+/* TextBubble */
+.textBubble {
+	position: relative;
+	background:   var(--dark-grey);
+	border-radius: 50px;
+    width: 20rem;
+    height: 20rem;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 0;
+    padding: 2rem;
+    z-index: 99;
+}
+
+.textBubble:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	border: 46px solid transparent;
+	border-top-color: var(--dark-grey);
+	border-bottom: 0;
+	margin-left: -50%;
+	margin-bottom: -30px;
+
+}
+.textBubble--text{
+    text-align: center;
+    color: var(--white);
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.textBubble--button{
+    background: var(--back-ground);
+    color: var(--white);
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 12.5%;
+    border: 1px solid var(--penguin-orange);
+    padding: 0.3rem;
+
+}
+.textBubble--button:hover{
+    background: var(--penguin-orange);
+    color: var(--black);
+    border: 2px solid var(--dark-grey);
+    cursor: pointer;
+}
+
+
+/* Animaties */
+@keyframes float{
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(20deg);
+    }
+    50%{
+        transform: rotate(0deg);
+    }
+    75%{
+        transform: rotate(-25deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
