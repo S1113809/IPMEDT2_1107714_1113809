@@ -28,16 +28,25 @@ body{
 Altered to own wishes */
 .rocket__container{
     position: absolute;
-    bottom: -500;
     width: 80px;
     left: calc(50% - 60px);
-    animation: launch 8s 0.3s 1 forwards linear;
     opacity: 100;
     z-index: 19;
 }
 .rocket{
     animation: bounce 0.5s infinite;
 }
+
+.launch{
+    bottom: -500;
+    animation: launch 8s 0.3s 1 forwards linear;
+}
+
+.touchdown{
+    top: 0;
+    animation: touchDown 12s 0.3s 1 forwards linear;
+}
+
 .rocket--body{
     background-color: var(--midgrey);
     height: 180px;
@@ -191,6 +200,57 @@ Altered to own wishes */
   border-radius: 100%;
 }
 
+/* TextBubble */
+.textBubble {
+	  position: relative;
+	  background: #4d4646;
+	  border-radius: 50px;
+    width: auto;
+    height: auto;
+    min-width: 25vw;
+    max-width: 35vw;
+    min-height: 25vh;
+    margin: auto;
+    margin-top: 15%;
+    margin-bottom: 0;
+    padding: 2rem;
+    z-index: 99;
+    text-align: center;
+}
+.textBubble--heading{
+    font-size: 1.8rem;
+    color: var(--white);
+    text-align: center;
+    margin-bottom:1rem;
+}
+.textBubble--text{
+    text-align: center;
+    color: var(--white);
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.textBubble--button{
+    font-family: 'Monda', sans-serif;
+    background: #B36B00;
+    color: var(--white);
+    width: 60%;
+    margin-top: 12.5%;
+    border: 1px dotted var(--button-orange);
+    padding: 0.3rem;
+    transition: 0.2s;
+    border-radius: 5px;
+    text-align: center;
+    min-width: 80px;
+}
+.textBubble--button:hover{
+    background: #5e3800;
+    color: var(--white);
+    border: 2px solid var(--dark-grey);
+    cursor: pointer;
+}
+
 /* Animations */
 /* Exhaust */
 @keyframes fumes {
@@ -242,5 +302,18 @@ Altered to own wishes */
     }
     100% {
         bottom: 150%;
+    }
+}
+
+@keyframes touchDown {
+    0%{
+        top: -600px;
+    }
+    10%{
+        opacity: 0.5;
+    }
+    100%{
+        top: 80%;
+        opacity: 1;
     }
 }

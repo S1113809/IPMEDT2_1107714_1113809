@@ -20,13 +20,16 @@ window.onload = function () {
     else if(path.toString().includes("/main.html")){
         playAudio(space_audio, 0);
     }
+    else if(path.toString().includes("/touchdown.html")){
+        playAudio(rocket_takeOf_audio, 0);
+    }
     // start app muted -> check if button is muted or not
     if (JSON.parse(localStorage.getItem('muted')) === true){
         mute();
     }
     else if (JSON.parse(localStorage.getItem('muted')) === false) {
         unmute();
-    }   
+    }
 }
 
 function toggleSound(){
@@ -94,12 +97,12 @@ function playAudio(audio, time){
         .catch(error => {
             console.log('Unable to play the audio, User has not interacted yet.');
         });
-    },200);    
+    },200);
     if(audio == space_audio){
         audio.addEventListener('ended', function() {
             this.currentTime = 0;
             this.play();
         }, false);
     }
-    
+
 }

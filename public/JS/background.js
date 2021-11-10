@@ -72,6 +72,10 @@ function setStageForward(stageInt){
 
       myLoop2();
       break;
+
+    case 2:
+      window.location.href = "touchdown.html";
+      break;
   }
 
   stage++;
