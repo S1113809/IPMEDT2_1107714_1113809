@@ -1,3 +1,5 @@
+/* Validator: no errors or warnings */
+/* base styling*/
 *{
     padding: 0;
     margin: 0;
@@ -11,7 +13,7 @@ body{
     background-color: var(--back-ground) ;
     margin-top: 5rem;
 }
-
+/* twinke animation */
 @keyframes twinkle {
     0% {
       transform: scale(1, 1) rotate(0deg);

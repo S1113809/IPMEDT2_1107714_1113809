@@ -1,3 +1,4 @@
+<!-- Validator no errors -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="./CSS/rocket.css">
     <link rel="stylesheet" href="./CSS/main.css">
     <link rel="stylesheet" href="./CSS/modal.css">
+    <link rel="stylesheet" href="./CSS/pinguin.css">
 
     <!-- Style sheets for sound icon -->
     <link rel="stylesheet" href="./CSS/muteButton.css">
@@ -24,7 +26,8 @@
     <script type="text/javascript" src="./JS/starsBG.js" defer> </script>
     <script type="text/javascript" src="./JS/background.js" defer> </script>
     <script type="text/javascript" src="./JS/modal.js" defer> </script>
-    <script src="./JS/sound.js" defer></script>
+    <script type="text/javascript" src="./JS/penguin.js" defer></script>
+    <script type="text/javascript" src="./JS/sound.js" defer></script>
      <!-- Mute audio button -->
      <section class="mute__container">
       <figure class="unmuted toggle-sound"  onclick="toggleSound()">
@@ -34,12 +37,17 @@
           <div class="sound--wave sound--wave_three"></div>
         </figure>
       </section>
+      <!-- Starry backgrounds -->
     <section class="backgroundContainer">
+      
       <section id="js--background1" class="backgroundContainer__background1 background"></section>
       <section id="js--background2" class="backgroundContainer__background2 background"></section>
-      <section id="js--background3" class="backgroundContainer__background3 background"></section>
+      <section id="js--background3" class="backgroundContainer__background3 background">
+       
+      </section>
     </div>
     <main>
+      <!-- Rocket -->
       <section class="rocket__container">
           <figure class="rocket">
               <div class="rocket--body"></div>
@@ -50,12 +58,13 @@
           </figure>
           <figure class="exhaust--flame"></figure>
       </section>
+      <!-- Navi buttons -->
       <section class="navButtonContainer">
         <button id="js--buttonLeft" class="navButton navButton--left navButton--noClick" type="button" name="left"><</button>
         <button id="js--buttonRight" class="navButton navButton--right" type="button" name="right">></button>
       </section>
 
-
+      <!-- Modal for planet info -->
       <div id="js--modal1" class="modal">
         <div class="modal__content">
           <span id="js--modalClose1" class="modal--close">&times;</span>
@@ -83,7 +92,7 @@
             </table>
         </div>
       </div>
-
+      <!-- Modal for planet info -->
       <div id="js--modal2" class="modal">
         <div class="modal__content">
           <span id="js--modalClose2" class="modal--close">&times;</span>
@@ -111,7 +120,7 @@
             </table>
         </div>
       </div>
-
+      <!-- Modal for planet info -->
       <div id="js--modal3" class="modal">
         <div class="modal__content">
           <span id="js--modalClose3" class="modal--close">&times;</span>
@@ -139,8 +148,8 @@
             </table>
         </div>
       </div>
-
     </main>
+    <!-- Firebase -->
     <script type="module">
       // Import the functions you need from the SDKs you need
       import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
