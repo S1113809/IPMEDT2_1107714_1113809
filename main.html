@@ -6,10 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./CSS/rocket.css">
     <link rel="stylesheet" href="./CSS/main.css">
+    <link rel="stylesheet" href="./CSS/modal.css">
 
     <!-- Style sheets for sound icon -->
-    <link rel="stylesheet" href="./CSS/mutebutton.css">    
+    <link rel="stylesheet" href="./CSS/muteButton.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title>Space!</title>
 
     <title>Echoes of Space!</title>
@@ -19,6 +24,7 @@
   <body>
     <script type="text/javascript" src="./JS/starsBG.js" defer> </script>
     <script type="text/javascript" src="./JS/background.js" defer> </script>
+    <script type="text/javascript" src="./JS/modal.js" defer> </script>
     <script src="./JS/sound.js" defer></script>
      <!-- Mute audio button -->
      <section class="mute__container">
@@ -49,6 +55,92 @@
         <button id="js--buttonLeft" class="navButton navButton--left navButton--noClick" type="button" name="left"><</button>
         <button id="js--buttonRight" class="navButton navButton--right" type="button" name="right">></button>
       </section>
+
+
+      <div id="js--modal1" class="modal">
+        <div class="modal__content">
+          <span id="js--modalClose1" class="modal--close">&times;</span>
+          <h1>De aarde</h1>
+          <p>De Aarde is vanaf de Zon bekeken de derde planeet in ons zonnenstelsel. Deze planeet is voor 71% bedekt met water en is tot nu toe de enige planeet waar leven voorkomt.</p>
+          <table class="modal__content__table">
+            <tr class="modal__content__table--row">
+                <th class="modal__content__table--head">DIAMETER</th>
+                <th class="modal__content__table--head">MASSA</th>
+                <th class="modal__content__table--head">ROTATIETIJD</th>
+                <th class="modal__content__table--head">LEEFTIJD</th>
+                <th class="modal__content__table--head">AANTAL MANEN</th>
+                <th class="modal__content__table--head">TEMPERATUUR</th>
+                <th class="modal__content__table--head">AFSTAND TOT ZON</th>
+            </tr>
+            <tr class="modal__content__table--row">
+                <td class="modal__content__table--content">12.756 KM</td>
+                <td class="modal__content__table--content">5,9722x10^24 KG</td>
+                <td class="modal__content__table--content">23 uur, 56 minuten en 4 seconden</td>
+                <td class="modal__content__table--content">4,543 miljard jaar</td>
+                <td class="modal__content__table--content">1</td>
+                <td class="modal__content__table--content">13,85 °C of 287 K</td>
+                <td class="modal__content__table--content">149,6 miljoen KM</td>
+            </tr>
+            </table>
+        </div>
+      </div>
+
+      <div id="js--modal2" class="modal">
+        <div class="modal__content">
+          <span id="js--modalClose2" class="modal--close">&times;</span>
+          <h1>Mars</h1>
+          <p>Mars is de vierde planeet vanaf de Zon en is vernoemd naar de Romeinse god van de oorlog. Mars wordt ondanks zijn oker kleur de "Rode planeet" genoemd.  Ook Mars is af het toe te zien vanaf aarde, je ziet dan een rodige "ster". In 2003 werd er water ontdekt op Mars en is er in 2008 een ijsmonster onderzocht. Een paar jaar later, in 2015, maakte NASA bekend dat er er bewijs van stromend water is gevonden, hierdoor is er kans op leven op Mars!</p>
+          <table class="modal__content__table">
+            <tr class="modal__content__table--row">
+                <th class="modal__content__table--head">DIAMETER</th>
+                <th class="modal__content__table--head">MASSA</th>
+                <th class="modal__content__table--head">ROTATIETIJD</th>
+                <th class="modal__content__table--head">LEEFTIJD</th>
+                <th class="modal__content__table--head">AANTAL MANEN</th>
+                <th class="modal__content__table--head">TEMPERATUUR</th>
+                <th class="modal__content__table--head">AFSTAND TOT ZON</th>
+            </tr>
+            <tr class="modal__content__table--row">
+                <td class="modal__content__table--content">6794 KM</td>
+                <td class="modal__content__table--content">6,418×10^23 KG</td>
+                <td class="modal__content__table--content">24 uur, 37 minuten en 22,66 seconden</td>
+                <td class="modal__content__table--content">4,603 miljard jaar</td>
+                <td class="modal__content__table--content">2</td>
+                <td class="modal__content__table--content">-60  °C of 210 K</td>
+                <td class="modal__content__table--content">230 miljoen KM</td>
+            </tr>
+            </table>
+        </div>
+      </div>
+
+      <div id="js--modal3" class="modal">
+        <div class="modal__content">
+          <span id="js--modalClose3" class="modal--close">&times;</span>
+          <h1>Jupiter</h1>
+          <p>Jupiter is de grootste planeet van ons stelsel en staat vanaf de zon op de vijfde plek. Jupiter is een gas planeet, dit houd in dat de planeet geen fysiek oppervlakte heeft zoals de Aarde. Ook deze planeet is vernoemd naar een Romeinse god, dit maal de Oppergod, het is tenslotte de grootste planeet. </p>
+          <table class="modal__content__table">
+            <tr class="modal__content__table--row">
+                <th class="modal__content__table--head">DIAMETER</th>
+                <th class="modal__content__table--head">MASSA</th>
+                <th class="modal__content__table--head">ROTATIETIJD</th>
+                <th class="modal__content__table--head">LEEFTIJD</th>
+                <th class="modal__content__table--head">AANTAL MANEN</th>
+                <th class="modal__content__table--head">TEMPERATUUR</th>
+                <th class="modal__content__table--head">AFSTAND TOT ZON</th>
+            </tr>
+            <tr class="modal__content__table--row">
+                <td class="modal__content__table--content">142.984 KM</td>
+                <td class="modal__content__table--content">1,899×10^27 KG</td>
+                <td class="modal__content__table--content">9,84 uur</td>
+                <td class="modal__content__table--content">4,603 miljard jaar</td>
+                <td class="modal__content__table--content">79</td>
+                <td class="modal__content__table--content">-121.15  °C of 152 K</td>
+                <td class="modal__content__table--content">7,7841×10^8 KM</td>
+            </tr>
+            </table>
+        </div>
+      </div>
+
     </main>
     <script type="module">
       // Import the functions you need from the SDKs you need
