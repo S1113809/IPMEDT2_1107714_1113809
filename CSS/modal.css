@@ -71,6 +71,20 @@ p{
     font-family: 'Roboto', sans-serif;
 }
 
+::-webkit-scrollbar{
+    height: 7.5px;
+}
+::-webkit-scrollbar-track{
+    background: #999999;
+}
+::-webkit-scrollbar-thumb{
+    background: #B36B00;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: #5e3800;
+    cursor: pointer;
+}
+
 @media screen and (min-width: 800px ) {
   .modal__content{
     width: 50%;
