@@ -72,6 +72,10 @@ p{
     font-family: 'Roboto', sans-serif;
 }
 
+.modal__content__table--head{
+  padding: 2px;
+}
+
 ::-webkit-scrollbar{
     height: 7.5px;
 }
