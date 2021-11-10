@@ -78,7 +78,7 @@ img{
   margin: 1rem;
   bottom: 0;
   border-radius: 0.5rem;
-  background: #F08080;
+  background: #B36B00;
   transition: 0.2s;
   cursor: pointer;
   z-index: 20;
@@ -102,7 +102,7 @@ img{
 }
 
 .navButton:hover{
-  background-color: #CD5C5C;
+  background-color: #d1953d;
 }
 
 .navButton:active{
@@ -129,7 +129,7 @@ img{
   }
 }
 
-@media screen and (min-width: 500px ) {
+@media screen and (min-width: 600px ) {
   .rocket__container{
     left: 10%;
   }
