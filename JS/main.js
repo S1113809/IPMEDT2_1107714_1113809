@@ -1,4 +1,3 @@
-
 console.log("JS LOADED");
 
 // vars to alter
@@ -93,5 +92,21 @@ function toMain(){
         console.log("in timeout");
         window.location.href = "main.html";
     }, 8000);
+}
+
+const textBubble = document.getElementById("js--pengu-textBubble");
+window.onload = function ()  {
+    togglePenguin();
+}
+
+function togglePenguin(){    
+    textBubble.toggleAttribute('hidden');
+}
+
+function penguinClick(){
+    togglePenguin();
+}
+function penguinClose(){
+   togglePenguin();
 }
 

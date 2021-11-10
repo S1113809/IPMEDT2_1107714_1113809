@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./CSS/pinguin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monda&display=swap" rel="stylesheet">
+    <title>IPMEDT2</title>
+</head>
+<body>
+    <script src="./JS/main.js" defer></script>
+    <main>
+        
+        <article class="penguin__container">
+            <section class="textBubble" id="js--textBubble">
+                <p class="textBubble--text" id="js--pengu-textBubble-text">
+                    NOOT!
+                    <br>
+                    Leuk dat je me gevonden hebt! 
+                    <br>
+                    Ik zweef lekker verder,
+                    <br>
+                    NOOT!
+                </p>
+                <button class="textBubble--button" onclick="penguinClose()">Sluiten</button>
+            </section>
+            <figure class="penguin" onclick="penguinClick()">
+                <div class="penguin__bottom">
+                    <div class="penguin__bottom--hand penguin__bottom--right-hand"></div>
+                    <div class="penguin__bottom--hand penguin__bottom--left-hand"></div>
+                    <div class="penguin__bottom--feet penguin__bottom--right-feet"></div>
+                    <div class="penguin__bottom--feet penguin__bottom--left-feet"></div>
+                </div>
+                <div class="penguin__top">
+                    <div class="penguin__top--cheek penguin__top--right-cheek"></div>
+                    <div class="penguin__top--cheek penguin__top--left-cheek"></div>
+                    <div class="penguin__top--belly"></div>
+                    <div class="penguin__top--eye penguin__top--right-eye">
+                      <div class="penguin__top__eye--sparkle"></div>
+                    </div>
+                    <div class="penguin__top--eye penguin__top--left-eye">
+                      <div class="penguin__top__eye--sparkle"></div>
+                    </div>
+                    <div class="penguin__top--blush penguin__top--blush-right"></div>
+                    <div class="penguin__top--blush penguin__top--blush-left"></div>
+                    <div class="penguin__top--beak penguin__top--beak-top"></div>
+                    <div class="penguin__top--beak penguin__top--beak-bottom"></div>
+                </div>   
+                <div class="penguin__helmet">
+                    <div class="penguin__helmet--base"></div>
+                    <div class="penguin__helmet--glass"></div>
+                    <div class="penguin__helmet--shine"></div>
+                    <div class="penguin__helmet--side penguin__helmet--side-left"></div>
+                    <div class="penguin__helmet--side penguin__helmet--side-right"></div>
+                </div>         
+            </figure>
+        </article>
+    </main>
+</body>
+</html>
